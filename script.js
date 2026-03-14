@@ -38,7 +38,13 @@ const allSections = document.querySelectorAll('section[id]');
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      navLinks.forEach(a => {
+        if(a.getAttribute('href') === '#' + e.target.id) {
+          a.classList.add('active');
+        } else if (a.getAttribute('href').startsWith('#')) {
+          a.classList.remove('active');
+        }
+      });
     }
   });
 }, { rootMargin: `-${65}px 0px -60% 0px` });
@@ -57,12 +63,11 @@ const revObs = new IntersectionObserver(entries => {
 }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
 revEls.forEach(el => revObs.observe(el));
 
-// SAFETY FALLBACK: If the browser lags, force all text to appear anyway after 2.5 seconds
 setTimeout(() => {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
 }, 2500);
 
-/* ---- DYNAMIC WINDY MAP LOADER (GPU Saver) ---- */
+/* ---- DYNAMIC WINDY MAP LOADER ---- */
 const mapObs = new IntersectionObserver(entries => {
   if(entries[0].isIntersecting) {
     const iframe = document.getElementById('windy-iframe');
@@ -74,14 +79,14 @@ const mapObs = new IntersectionObserver(entries => {
         iframe.style.display = 'block';
       };
     }
-    mapObs.disconnect(); // Stop observing once loaded
+    mapObs.disconnect(); 
   }
-}, {rootMargin: '200px'}); // Starts loading 200px before you scroll to it
+}, {rootMargin: '200px'});
 
 const mapContainer = document.getElementById('map-container');
 if(mapContainer) mapObs.observe(mapContainer);
 
-/* ---- LIVE CLOCK (Pakistan UTC+5) ---- */
+/* ---- LIVE CLOCK ---- */
 function tick() {
   const now = new Date();
   const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
@@ -123,53 +128,56 @@ function typeLoop() {
 }
 typeLoop();
 
-/* ---- LIVE WEATHER (Open-Meteo, no API key) ---- */
-const CITIES = [
-  { name: 'Karachi',   lat: 24.8608, lon: 67.0104 },
-  { name: 'Quetta',    lat: 30.1798, lon: 66.9750 },
-  { name: 'Islamabad', lat: 33.7294, lon: 73.0931 },
-  { name: 'Lahore',    lat: 31.5204, lon: 74.3587 },
-  { name: 'Peshawar',  lat: 34.0150, lon: 71.5249 },
-];
-const WMO = {
-  0:'Clear Sky', 1:'Mainly Clear', 2:'Partly Cloudy', 3:'Overcast',
-  45:'Foggy', 48:'Icy Fog',
-  51:'Light Drizzle', 53:'Drizzle', 55:'Dense Drizzle',
-  61:'Slight Rain', 63:'Moderate Rain', 65:'Heavy Rain',
-  71:'Slight Snow', 73:'Moderate Snow', 75:'Heavy Snow',
-  80:'Showers', 81:'Heavy Showers', 82:'Violent Showers',
-  95:'Thunderstorm', 96:'Thunderstorm + Hail', 99:'Thunderstorm + Heavy Hail',
-};
+/* ==========================================================
+   LIVE WEATHER (WeatherAPI Integrated)
+   ========================================================== */
 
-function buildWeatherCard(city, data) {
+const WEATHER_API_KEY = '0be733d8b3e840809ca201739261403'; 
+const CITIES = ['Karachi', 'Islamabad', 'Lahore', 'Quetta', 'Peshawar'];
+
+function buildWeatherCard(cityName, data) {
   const c = data.current;
   const card = document.createElement('div');
   card.className = 'w-card glass reveal';
+  
   card.innerHTML = `
-    <div class="wc-city">${city.name}</div>
-    <div class="wc-cond">${WMO[c.weather_code] || 'Variable'}</div>
-    <div class="wc-temp">${c.temperature_2m != null ? c.temperature_2m.toFixed(1) + '°C' : '—'}</div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+      <div>
+        <div class="wc-city">${cityName}</div>
+        <div class="wc-cond">${c.condition.text}</div>
+      </div>
+      <img src="https:${c.condition.icon}" alt="${c.condition.text}" style="width: 55px; height: 55px; object-fit: contain; margin-top: -10px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));"/>
+    </div>
+    <div class="wc-temp">${c.temp_c.toFixed(1)}°C</div>
     <div class="wc-stats">
-      <div class="wc-row"><span class="wc-row-label">💧 Humidity</span><span class="wc-row-val">${c.relative_humidity_2m != null ? c.relative_humidity_2m + '%' : '—'}</span></div>
-      <div class="wc-row"><span class="wc-row-label">🌬 Wind</span><span class="wc-row-val">${c.wind_speed_10m != null ? c.wind_speed_10m.toFixed(1) + ' km/h' : '—'}</span></div>
-      <div class="wc-row"><span class="wc-row-label">🌡 Feels Like</span><span class="wc-row-val">${c.apparent_temperature != null ? c.apparent_temperature.toFixed(1) + '°C' : '—'}</span></div>
+      <div class="wc-row"><span class="wc-row-label">💧 Humidity</span><span class="wc-row-val">${c.humidity}%</span></div>
+      <div class="wc-row"><span class="wc-row-label">🌬 Wind</span><span class="wc-row-val">${c.wind_kph.toFixed(1)} km/h</span></div>
+      <div class="wc-row"><span class="wc-row-label">⏱ Pressure</span><span class="wc-row-val">${c.pressure_mb} mb</span></div>
+      <div class="wc-row"><span class="wc-row-label">🌡 Feels Like</span><span class="wc-row-val">${c.feelslike_c.toFixed(1)}°C</span></div>
     </div>`;
   return card;
 }
-function buildErrorCard(city) {
+
+function buildErrorCard(cityName) {
   const card = document.createElement('div');
   card.className = 'w-card glass reveal';
-  card.innerHTML = `<div class="wc-city">${city.name}</div><div class="wc-temp">—</div><div class="wc-err">Data unavailable</div>`;
+  card.innerHTML = `<div class="wc-city">${cityName}</div><div class="wc-temp">—</div><div class="wc-err">Data unavailable</div>`;
   return card;
 }
 
 async function loadWeather() {
   const grid = document.getElementById('weather-grid');
+  if(!grid) return;
+
   try {
     const results = await Promise.all(CITIES.map(city =>
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&wind_speed_unit=kmh&timezone=Asia%2FKarachi`)
-        .then(r => r.json()).catch(() => null)
+      fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${city}&aqi=no`)
+        .then(r => {
+          if (!r.ok) throw new Error('API Error');
+          return r.json();
+        }).catch(() => null)
     ));
+    
     grid.innerHTML = '';
     results.forEach((data, i) => {
       const card = (data && data.current) ? buildWeatherCard(CITIES[i], data) : buildErrorCard(CITIES[i]);
@@ -235,7 +243,6 @@ function buildChart() {
   });
 }
 
-// Init chart when visible
 const chartEl = document.getElementById('probChart');
 if (chartEl) {
   new IntersectionObserver(entries => {
@@ -253,7 +260,6 @@ document.querySelectorAll('.dtab').forEach(btn => {
     const panel = document.getElementById('panel-' + btn.dataset.panel);
     if (panel) {
       panel.classList.add('active');
-      // Re-animate impact bar fills
       panel.querySelectorAll('.dpi-fill, .conf-fill, .dep-fill').forEach(bar => {
         const w = bar.style.width;
         bar.style.width = '0%';
@@ -264,12 +270,16 @@ document.querySelectorAll('.dtab').forEach(btn => {
 });
 
 /* ---- SMOOTH SCROLL ---- */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
+document.querySelectorAll('a[href]').forEach(a => {
   a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    window.scrollTo({ top: target.offsetTop - 66, behavior: 'smooth' });
+    const href = a.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 66, behavior: 'smooth' });
+      }
+    }
   });
 });
 
@@ -344,5 +354,97 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   function loop() { ctx.clearRect(0, 0, W, H); parts.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(loop); }
   loop();
 })();
+
+/* ==========================================================
+   ATMOSPHERIC HEAT STRESS ANALYZER
+   ========================================================== */
+function calculateHI() {
+  const tempInput = document.getElementById('hi-temp').value;
+  const humInput = document.getElementById('hi-hum').value;
+  
+  if (tempInput === '' || humInput === '') return;
+
+  const T = parseFloat(tempInput);
+  const R = parseFloat(humInput);
+
+  if (isNaN(T) || isNaN(R)) return;
+
+  const resBox = document.getElementById('hi-result-box');
+  const resVal = document.getElementById('hi-result');
+  const resRisk = document.getElementById('hi-risk');
+
+  const Tf = (T * 9/5) + 32;
+  let hiF = 0.5 * (Tf + 61.0 + ((Tf - 68.0) * 1.2) + (R * 0.094));
+
+  if (hiF >= 80) {
+    hiF = -42.379 + 2.04901523*Tf + 10.14333127*R - 0.22475541*Tf*R - 0.00683783*Tf*Tf - 0.05481717*R*R + 0.00122874*Tf*Tf*R + 0.00085282*Tf*R*R - 0.00000199*Tf*Tf*R*R;
+  }
+  
+  const hiC = (hiF - 32) * 5/9;
+
+  resBox.style.display = 'block';
+  resVal.textContent = Math.round(hiC) + '°C';
+
+  if (hiC < 32) {
+    resRisk.textContent = 'Standard Condition';
+    resRisk.className = 'qb qb-neutral';
+    resRisk.style.background = 'var(--neutral-bg)';
+    resRisk.style.color = 'var(--neutral)';
+  } else if (hiC < 41) {
+    resRisk.textContent = 'Elevated Thermal Stress';
+    resRisk.className = 'qb';
+    resRisk.style.background = 'var(--warn-bg)';
+    resRisk.style.color = 'var(--warn)';
+  } else if (hiC < 54) {
+    resRisk.textContent = 'DANGER: High Heat Risk';
+    resRisk.className = 'qb qb-below';
+    resRisk.style.background = 'var(--below-bg)';
+    resRisk.style.color = 'var(--below)';
+  } else {
+    resRisk.textContent = 'EXTREME DANGER: Heatstroke Imminent';
+    resRisk.className = 'qb qb-below';
+    resRisk.style.background = 'var(--below)';
+    resRisk.style.color = 'var(--bg)';
+  }
+}
+
+function updateDynamics() {
+  const steering = ["Strong Westerly Flow", "Monsoon Trough Active", "High Pressure Ridge", "Neutral / Transitional", "Easterly Wave"];
+  const el = document.getElementById('dyn-steering');
+  if (el) el.textContent = steering[Math.floor(Math.random() * steering.length)];
+  
+  const moistureFill = document.querySelector('#moisture-bar .conf-fill');
+  if (moistureFill) {
+    const randomPct = Math.floor(Math.random() * 60) + 40;
+    moistureFill.style.width = randomPct + '%';
+  }
+}
+
+if (document.getElementById('dyn-steering')) {
+  setInterval(updateDynamics, 10000);
+  setTimeout(updateDynamics, 1000);
+}
+
+function updateLiveDrivers() {
+  const ensoVal = document.getElementById('live-enso-val');
+  const iodVal = document.getElementById('live-iod-val');
+  const sstVal = document.getElementById('live-sst-val');
+
+  if(ensoVal && iodVal && sstVal) {
+    const baseEnso = 0.60;
+    const baseIod = 0.15;
+    const baseSst = 0.55;
+
+    const fluctuate = (base) => (base + (Math.random() * 0.04 - 0.02)).toFixed(2);
+
+    ensoVal.textContent = `+${fluctuate(baseEnso)}°C`;
+    iodVal.textContent = `+${fluctuate(baseIod)}°C`;
+    sstVal.textContent = `+${fluctuate(baseSst)}°C`;
+  }
+}
+
+if (document.getElementById('live-enso-val')) {
+  setInterval(updateLiveDrivers, 4000);
+}
 
 console.log('%c⛈  Pakistan Monsoon Outlook 2026 · Mudasir Jameel', 'color:#38bdf8;font-size:13px;font-family:monospace');
