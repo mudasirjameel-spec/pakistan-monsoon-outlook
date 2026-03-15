@@ -2,22 +2,36 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meteorological Calculators — Mudasir Jameel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Meteorological Calculators — PakClimate Insight</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
 <canvas id="rain-canvas"></canvas>
 <canvas id="particle-canvas"></canvas>
 
+<button id="scrollTopBtn" title="Go to top">↑</button>
+
+<div class="weather-ticker">
+  <div class="ticker-label">LIVE ALERTS</div>
+  <div class="ticker-wrap">
+    <div class="ticker-move">
+      <span class="ticker-item">⚠️ <strong>WESTERN DISTURBANCE:</strong> Potent weather system approaching March 18. Widespread heavy precipitation expected across KP, Punjab, and North Balochistan.</span>
+      <span class="ticker-item">🚨 <strong>ENSO WATCH:</strong> ECMWF plumes indicate a rapid warming trajectory. Strong El Niño expected by peak summer 2026, posing severe drought risk to Sindh.</span>
+      <span class="ticker-item">🌙 <strong>ASTRONOMY:</strong> Shawwal 1447 AH moon sighting confirmed impossible for March 19. Eid-ul-Fitr projected for Saturday, March 21, 2026.</span>
+      <span class="ticker-item">🚀 <strong>PLATFORM UPDATE:</strong> New interactive data layers and model integration Underway. Check back for enhancements.</span>
+    </div>
+  </div>
+</div>
+
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="index.html#hero" class="nav-logo">
       <span class="logo-icon">⛈</span>
-      <span class="logo-name">Mudasir<span class="logo-accent">Weather</span></span>
+      <span class="logo-name">PakClimate<span class="logo-accent">Insight</span></span>
     </a>
     <ul class="nav-menu" id="nav-menu">
       <li><a href="index.html#hero">Home</a></li>
@@ -54,8 +68,8 @@
     </div>
 
     <div class="calc-grid">
-      <div class="glass" style="padding: 2rem; border-radius: var(--radius);">
-        <h3 style="margin-bottom:1rem; color: var(--text1);">Heat Index</h3>
+      <div class="calc-card reveal">
+        <h3 style="margin-bottom:1rem; color: var(--text1); font-family: var(--font-head);">Heat Index (NOAA Formula)</h3>
         <div class="input-group">
           <label>Temperature (°C)</label>
           <input type="number" id="hi-temp" placeholder="e.g. 35">
@@ -68,8 +82,8 @@
         <div id="hi-result" class="calc-result"></div>
       </div>
 
-      <div class="glass" style="padding: 2rem; border-radius: var(--radius);">
-        <h3 style="margin-bottom:1rem; color: var(--text1);">Average Temperature</h3>
+      <div class="calc-card reveal">
+        <h3 style="margin-bottom:1rem; color: var(--text1); font-family: var(--font-head);">Average Temperature</h3>
         <div class="input-group">
           <label>Max Temps (°C) - comma separated</label>
           <input type="text" id="avg-max" placeholder="32, 34, 33">
@@ -89,7 +103,7 @@
   <div class="footer-inner">
     <div class="footer-logo">
       <span class="logo-icon">⛈</span>
-      <span class="logo-name">Mudasir<span class="logo-accent">Weather</span></span>
+      <span class="logo-name">PakClimate<span class="logo-accent">Insight</span></span>
     </div>
     <div class="footer-links">
       <a href="index.html#hero">Home</a>
