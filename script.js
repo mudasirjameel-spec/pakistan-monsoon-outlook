@@ -10,21 +10,21 @@
    - Evening (5 PM): Replace "--" with the official 'max' temp.
    ============================================================ */
 window.PMD_ARCHIVE = {
-  // --- 16 MARCH (MORNING UPDATE) ---
+  // --- 16 MARCH (EVENING UPDATE - PMD SCREENSHOTS EXTRACTED) ---
   "16 March 2026": [
     // Punjab
-    { city: "Lahore",          lat: 31.5204, lon: 74.3587, max: "--", min: 15.5, rain: 0 },
-    { city: "Islamabad",       lat: 33.7294, lon: 73.0931, max: "--", min: 11.5, rain: 22 },
+    { city: "Lahore",          lat: 31.5204, lon: 74.3587, max: 31, min: 15.5, rain: 0 },
+    { city: "Islamabad",       lat: 33.7294, lon: 73.0931, max: 26, min: 11.5, rain: 22 },
     { city: "Rawalpindi",      lat: 33.5973, lon: 73.0479, max: "--", min: 13, rain: 18 },
-    { city: "Faisalabad",      lat: 31.4181, lon: 73.0776, max: "--", min: 14, rain: 0 },
-    { city: "Multan",          lat: 30.1978, lon: 71.4697, max: "--", min: 16, rain: 0 },
+    { city: "Faisalabad",      lat: 31.4181, lon: 73.0776, max: 32, min: 14, rain: 0 },
+    { city: "Multan",          lat: 30.1978, lon: 71.4697, max: 33, min: 16, rain: 0 },
     { city: "Sargodha",        lat: 32.0836, lon: 72.6711, max: "--", min: 14, rain: 0 },
     { city: "Jhelum",          lat: 32.9405, lon: 73.7276, max: "--", min: 12, rain: 0 },
-    { city: "Bahawalpur",      lat: 29.3957, lon: 71.6833, max: "--", min: 15.5, rain: 0 },
+    { city: "Bahawalpur",      lat: 29.3957, lon: 71.6833, max: 33, min: 15.5, rain: 0 },
     { city: "Sialkot",         lat: 32.4925, lon: 74.5310, max: "--", min: 13, rain: 0 },
     { city: "Gujranwala",      lat: 32.1617, lon: 74.1883, max: "--", min: 13.5, rain: 0 },
-    { city: "D.G. Khan",       lat: 30.0489, lon: 70.6455, max: "--", min: 15, rain: 0 },
-    { city: "Murree",          lat: 33.9070, lon: 73.3943, max: "--", min: 4,  rain: 25 },
+    { city: "D.G. Khan",       lat: 30.0489, lon: 70.6455, max: 32, min: 15, rain: 0 },
+    { city: "Murree",          lat: 33.9070, lon: 73.3943, max: 14, min: 4,  rain: 25 },
     { city: "Sahiwal",         lat: 30.6682, lon: 73.1114, max: "--", min: 14.5, rain: 0 },
     { city: "Bhakkar",         lat: 31.6289, lon: 71.0634, max: "--", min: 14, rain: 0 },
     { city: "Mianwali",        lat: 32.5839, lon: 71.5370, max: "--", min: 13, rain: 0 },
@@ -52,54 +52,54 @@ window.PMD_ARCHIVE = {
     { city: "Khushab",         lat: 32.2952, lon: 72.3502, max: "--", min: 13, rain: 0 },
     
     // Balochistan
-    { city: "Quetta",     lat: 30.1798, lon: 66.9750, max: "--", min: 5,  rain: 0 },
-    { city: "Khuzdar",    lat: 27.8123, lon: 66.6127, max: "--", min: 10, rain: 0 },
-    { city: "Kalat",      lat: 29.0225, lon: 66.5916, max: "--", min: 3,  rain: 0 },
-    { city: "Dalbandin",  lat: 28.8885, lon: 64.4062, max: "--", min: 12, rain: 0 },
-    { city: "Nokkundi",   lat: 28.8225, lon: 62.7531, max: "--", min: 13, rain: 0 },
-    { city: "Panjgur",    lat: 26.9719, lon: 64.0945, max: "--", min: 14, rain: 0 },
-    { city: "Turbat",     lat: 26.0012, lon: 63.0485, max: "--", min: 18, rain: 0 },
-    { city: "Gwadar",     lat: 25.1216, lon: 62.3254, max: "--", min: 21, rain: 0 },
-    { city: "Pasni",      lat: 25.2630, lon: 63.4692, max: "--", min: 20, rain: 0 },
-    { city: "Jiwani",     lat: 25.0485, lon: 61.7402, max: "--", min: 20, rain: 0 },
-    { city: "Ormara",     lat: 25.2088, lon: 64.6357, max: "--", min: 21, rain: 0 },
-    { city: "Lasbela",    lat: 26.2278, lon: 66.2931, max: "--", min: 17, rain: 0 },
-    { city: "Sibbi",      lat: 29.5448, lon: 67.8764, max: "--", min: 19, rain: 0 },
-    { city: "Zhob",       lat: 31.3408, lon: 69.4483, max: "--", min: 7,  rain: 0 },
-    { city: "Barkhan",    lat: 29.8977, lon: 69.5256, max: "--", min: 10, rain: 0 },
+    { city: "Quetta",     lat: 30.1798, lon: 66.9750, max: 23, min: 5,  rain: 0 },
+    { city: "Khuzdar",    lat: 27.8123, lon: 66.6127, max: 28, min: 10, rain: 0 },
+    { city: "Kalat",      lat: 29.0225, lon: 66.5916, max: 21, min: 3,  rain: 0 },
+    { city: "Dalbandin",  lat: 28.8885, lon: 64.4062, max: 32, min: 12, rain: 0 },
+    { city: "Nokkundi",   lat: 28.8225, lon: 62.7531, max: 34, min: 13, rain: 0 },
+    { city: "Panjgur",    lat: 26.9719, lon: 64.0945, max: 31, min: 14, rain: 0 },
+    { city: "Turbat",     lat: 26.0012, lon: 63.0485, max: 36, min: 18, rain: 0 },
+    { city: "Gwadar",     lat: 25.1216, lon: 62.3254, max: 32, min: 21, rain: 0 },
+    { city: "Pasni",      lat: 25.2630, lon: 63.4692, max: 32, min: 20, rain: 0 },
+    { city: "Jiwani",     lat: 25.0485, lon: 61.7402, max: 30, min: 20, rain: 0 },
+    { city: "Ormara",     lat: 25.2088, lon: 64.6357, max: 32, min: 21, rain: 0 },
+    { city: "Lasbela",    lat: 26.2278, lon: 66.2931, max: 36, min: 17, rain: 0 },
+    { city: "Sibbi",      lat: 29.5448, lon: 67.8764, max: 34, min: 19, rain: 0 },
+    { city: "Zhob",       lat: 31.3408, lon: 69.4483, max: 21, min: 7,  rain: 0 },
+    { city: "Barkhan",    lat: 29.8977, lon: 69.5256, max: 25, min: 10, rain: 0 },
 
     // Sindh
-    { city: "Karachi",    lat: 24.8608, lon: 67.0104, max: "--", min: 22, rain: 0 },
-    { city: "Hyderabad",  lat: 25.3960, lon: 68.3578, max: "--", min: 20, rain: 0 },
-    { city: "Sukkur",     lat: 27.7139, lon: 68.8459, max: "--", min: 19, rain: 0 },
+    { city: "Karachi",    lat: 24.8608, lon: 67.0104, max: 33, min: 22, rain: 0 },
+    { city: "Hyderabad",  lat: 25.3960, lon: 68.3578, max: 36, min: 20, rain: 0 },
+    { city: "Sukkur",     lat: 27.7139, lon: 68.8459, max: 36, min: 19, rain: 0 },
     { city: "Larkana",    lat: 27.5570, lon: 68.2028, max: "--", min: 20, rain: 0 },
-    { city: "Nawabshah",  lat: 26.2483, lon: 68.4096, max: "--", min: 21, rain: 0 },
+    { city: "Nawabshah",  lat: 26.2483, lon: 68.4096, max: 37, min: 21, rain: 0 },
     { city: "Jacobabad",  lat: 28.2818, lon: 68.4376, max: "--", min: 19, rain: 0 },
-    { city: "Mithi",      lat: 24.7370, lon: 69.7971, max: "--", min: 18, rain: 0 },
+    { city: "Mithi",      lat: 24.7370, lon: 69.7971, max: 38, min: 18, rain: 0 },
     { city: "Badin",      lat: 24.6558, lon: 68.8330, max: "--", min: 20, rain: 0 },
 
     // KP & Northern Areas
-    { city: "Peshawar",   lat: 34.0150, lon: 71.5249, max: "--", min: 12.5, rain: 15 },
+    { city: "Peshawar",   lat: 34.0150, lon: 71.5249, max: 29, min: 12.5, rain: 15 },
     { city: "Mardan",     lat: 34.1989, lon: 72.0468, max: "--", min: 11, rain: 0 },
     { city: "Swat",       lat: 35.2227, lon: 72.4258, max: "--", min: 7,  rain: "Trace" },
     { city: "D.I. Khan",  lat: 31.8626, lon: 70.9019, max: "--", min: 14, rain: 0 },
     { city: "Bannu",      lat: 32.9861, lon: 70.6042, max: "--", min: 13, rain: 0 },
     { city: "Kohat",      lat: 33.5869, lon: 71.4414, max: "--", min: 12, rain: 0 },
-    { city: "Dir",        lat: 35.19,   lon: 71.87,   max: "--", min: 6.0, rain: 19 },
+    { city: "Dir",        lat: 35.19,   lon: 71.87,   max: 23, min: 6.0, rain: 19 },
     { city: "Mirkhani",   lat: 35.58,   lon: 71.72,   max: "--", min: 5.5, rain: 7 },
-    { city: "Balakot",    lat: 34.55,   lon: 73.35,   max: "--", min: 9.0, rain: 6 },
-    { city: "Chitral",    lat: 35.85,   lon: 71.78,   max: "--", min: 5.5, rain: 5 },
-    { city: "Drosh",      lat: 35.56,   lon: 71.79,   max: "--", min: 7.5, rain: 5 },
+    { city: "Balakot",    lat: 34.55,   lon: 73.35,   max: 24, min: 9.0, rain: 6 },
+    { city: "Chitral",    lat: 35.85,   lon: 71.78,   max: 23, min: 5.5, rain: 5 },
+    { city: "Drosh",      lat: 35.56,   lon: 71.79,   max: 24, min: 7.5, rain: 5 },
     { city: "Pattan",     lat: 35.12,   lon: 73.01,   max: "--", min: 6.0, rain: 1 },
     { city: "Kalam",      lat: 35.48,   lon: 72.58,   max: "--", min: 0.0, rain: "Trace" },
 
     // Gilgit-Baltistan & AJK
-    { city: "Gilgit",       lat: 35.9208, lon: 74.3083, max: "--", min: 6,  rain: 0 },
-    { city: "Skardu",       lat: 35.2971, lon: 75.6333, max: "--", min: 2,  rain: 0 },
-    { city: "Muzaffarabad", lat: 34.3700, lon: 73.4714, max: "--", min: 9,  rain: 0 },
-    { city: "Chilas",       lat: 35.42,   lon: 74.09,   max: "--", min: 9.5, rain: 4 },
+    { city: "Gilgit",       lat: 35.9208, lon: 74.3083, max: 24, min: 6,  rain: 0 },
+    { city: "Skardu",       lat: 35.2971, lon: 75.6333, max: 16, min: 2,  rain: 0 },
+    { city: "Muzaffarabad", lat: 34.3700, lon: 73.4714, max: 26, min: 9,  rain: 0 },
+    { city: "Chilas",       lat: 35.42,   lon: 74.09,   max: 29, min: 9.5, rain: 4 },
     { city: "Astore",       lat: 35.36,   lon: 74.85,   max: "--", min: 3.0, rain: 2 },
-    { city: "Gupis",        lat: 36.22,   lon: 73.44,   max: "--", min: 3.0, rain: "Trace" },
+    { city: "Gupis",        lat: 36.22,   lon: 73.44,   max: 21, min: 3.0, rain: "Trace" },
     { city: "Bunji",        lat: 35.64,   lon: 74.63,   max: "--", min: 5.5, rain: "Trace" },
     { city: "Garhi Dupatta",lat: 34.22,   lon: 73.61,   max: "--", min: 7.0, rain: "Trace" }
   ],
@@ -174,11 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================
-     📍 NEW: AUTO-HIGHLIGHT NAVBAR LINKS ON SCROLL (SCROLL SPY)
+     📍 AUTO-HIGHLIGHT NAVBAR LINKS ON SCROLL (SCROLL SPY)
      ========================================================== */
   const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
   window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY + 100; // Offset for sticky navbar
+      const scrollPos = window.scrollY + 100;
       navLinks.forEach(link => {
           const targetId = link.getAttribute('href');
           if(targetId && targetId !== '#') {
@@ -525,11 +525,19 @@ document.addEventListener('DOMContentLoaded', () => {
           
           let selectedDate = historySelector ? historySelector.value : Object.keys(window.PMD_ARCHIVE)[0]; 
 
-          // Initialize Map - ATTRIBUTION CONTROL FALSE (REMOVES LOGO/TEXT)
+          // Initialize Map - ATTRIBUTION CONTROL FALSE
           const map = L.map(targetElement.id, { scrollWheelZoom: false, attributionControl: false }).setView([30.0, 69.0], 5);
           
-          const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
-          const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
+          // 📍 FIX: REMOVE DEFAULT LEAFLET ICONS/SHADOWS (THIS KILLS THE DIAMONDS)
+          delete L.Icon.Default.prototype._getIconUrl;
+          L.Icon.Default.mergeOptions({
+              iconRetinaUrl: '',
+              iconUrl: '',
+              shadowUrl: ''
+          });
+          
+          const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', { maxZoom: 10 });
+          const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { maxZoom: 10 });
           
           const baseMaps = { "Dark Map": darkTiles, "Light Map": lightTiles };
           L.control.layers(baseMaps).addTo(map);
