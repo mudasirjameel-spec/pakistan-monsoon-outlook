@@ -173,6 +173,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  /* ==========================================================
+     📍 NEW: AUTO-HIGHLIGHT NAVBAR LINKS ON SCROLL (SCROLL SPY)
+     ========================================================== */
+  const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+  window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 100; // Offset for sticky navbar
+      navLinks.forEach(link => {
+          const targetId = link.getAttribute('href');
+          if(targetId && targetId !== '#') {
+              const section = document.querySelector(targetId);
+              if (section) {
+                  if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+                      navLinks.forEach(a => a.classList.remove('active'));
+                      link.classList.add('active');
+                  }
+              }
+          }
+      });
+  }, { passive: true });
+
   const dropBtns = document.querySelectorAll('.dropbtn');
   dropBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -304,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadWeather();
 
   /* ==========================================================
-     📍 BULLETPROOF RIVER GAUGE API
+     📍 RIVER GAUGE API
      ========================================================== */
   async function loadRiverData() {
     const grid = document.getElementById('river-grid');
@@ -356,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadRiverData();
 
   /* ==========================================================
-     📍 BULLETPROOF EARTHQUAKES API
+     📍 EARTHQUAKES API
      ========================================================== */
   async function loadEarthquakes() {
     const grid = document.getElementById('quake-grid');
@@ -508,8 +528,8 @@ document.addEventListener('DOMContentLoaded', () => {
           // Initialize Map - ATTRIBUTION CONTROL FALSE (REMOVES LOGO/TEXT)
           const map = L.map(targetElement.id, { scrollWheelZoom: false, attributionControl: false }).setView([30.0, 69.0], 5);
           
-          const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', { maxZoom: 10 });
-          const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { maxZoom: 10 });
+          const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
+          const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
           
           const baseMaps = { "Dark Map": darkTiles, "Light Map": lightTiles };
           L.control.layers(baseMaps).addTo(map);
