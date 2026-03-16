@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -22,7 +24,7 @@
       <span class="ticker-item">⚠️ <strong>WESTERN DISTURBANCE:</strong> Potent weather system approaching March 18. Widespread heavy precipitation expected across KP, Punjab, and North Balochistan.</span>
       <span class="ticker-item">🚨 <strong>ENSO WATCH:</strong> ECMWF plumes indicate a rapid warming trajectory. Strong El Niño expected by peak summer 2026, posing severe drought risk to Sindh.</span>
       <span class="ticker-item">🌙 <strong>ASTRONOMY:</strong> Shawwal 1447 AH moon sighting confirmed impossible for March 19. Eid-ul-Fitr projected for Saturday, March 21, 2026.</span>
-      <span class="ticker-item">🚀 <strong>PLATFORM UPDATE:</strong> New interactive data layers and model integration Underway. Check back for enhancements.</span>
+      <span class="ticker-item">🌍 <strong>SYSTEM UPDATE:</strong> Live AQI and Regional Seismic monitoring systems are now online.</span>
     </div>
   </div>
 </div>
@@ -35,11 +37,13 @@
     </a>
     <ul class="nav-menu" id="nav-menu">
       <li><a href="index.html#hero">Home</a></li>
-      <li><a href="index.html#live">Live Weather</a></li>
-      <li><a href="index.html#live-map">Radar</a></li>
+      <li><a href="index.html#live">Weather</a></li>
+      <li><a href="rivers.html">Rivers</a></li>
+      <li><a href="earthquakes.html">Quakes</a></li>
+      <li><a href="index.html#rainfall-update">Alerts</a></li>
       <li><a href="index.html#moon">Moon</a></li>
-      <li><a href="index.html#rainfall-update">Rainfall Alert</a></li>
       <li><a href="index.html#outlook">Outlook 2026</a></li>
+      <li><a href="history.html">History</a></li>
       <li class="dropdown">
         <a href="#" class="dropbtn active">Resources ▾</a>
         <div class="dropdown-content">
@@ -69,7 +73,7 @@
       Data <span class="hero-name">Resources</span>
     </h1>
     <p class="hero-desc reveal" style="max-width: 600px; margin: 0 auto;">
-      Access to the official meteorological agencies and external models powering our 2026 Pakistan Monsoon analysis.
+      Access to the official meteorological agencies and external models powering our comprehensive Pakistan climate analysis.
     </p>
   </div>
 </section>
@@ -118,14 +122,18 @@
     </div>
     <div class="footer-links">
       <a href="index.html#hero">Home</a>
-      <a href="index.html#live">Live Weather</a>
-      <a href="index.html#live-map">Radar</a>
-      <a href="index.html#moon">Moon</a>
+      <a href="index.html#live">Weather</a>
+      <a href="rivers.html">Rivers</a>
+      <a href="earthquakes.html">Quakes</a>
       <a href="index.html#rainfall-update">Alerts</a>
+      <a href="index.html#moon">Moon</a>
       <a href="index.html#outlook">Outlook</a>
+      <a href="history.html">History</a>
+      <a href="tools.html">Calculators</a>
+      <a href="resources.html">Resources</a>
       <a href="index.html#about">About</a>
     </div>
-    <p class="footer-copy">© 2026 Mudasir Jameel Weather Analysis &nbsp;·&nbsp; Pakistan Monsoon Outlook</p>
+    <p class="footer-copy">© 2026 Mudasir Jameel Weather Analysis &nbsp;·&nbsp; Pakistan Climate & Meteorological Dashboard</p>
   </div>
 </footer>
 

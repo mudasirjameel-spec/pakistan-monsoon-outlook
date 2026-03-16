@@ -3,6 +3,137 @@
    Mudasir Jameel
    ========================================================== */
 
+/* ============================================================
+   📍 OFFICIAL PMD DATA ARCHIVE (CONTROL PANEL)
+   EASY UPDATE GUIDE:
+   - Morning (8 AM): Enter 'min' and 'rain'. Put "--" for 'max'.
+   - Evening (5 PM): Replace "--" with the official 'max' temp.
+   ============================================================ */
+window.PMD_ARCHIVE = {
+  // --- 16 MARCH (MORNING UPDATE - WAITING FOR MAX TEMPS) ---
+  "16 March 2026": [
+    // Punjab
+    { city: "Lahore",          lat: 31.5204, lon: 74.3587, max: "--", min: 14, rain: 0 },
+    { city: "Islamabad",       lat: 33.7294, lon: 73.0931, max: "--", min: 12, rain: 0 },
+    { city: "Rawalpindi",      lat: 33.5973, lon: 73.0479, max: "--", min: 13, rain: 0 },
+    { city: "Faisalabad",      lat: 31.4181, lon: 73.0776, max: "--", min: 14, rain: 0 },
+    { city: "Multan",          lat: 30.1978, lon: 71.4697, max: "--", min: 16, rain: 0 },
+    { city: "Sargodha",        lat: 32.0836, lon: 72.6711, max: "--", min: 14, rain: 0 },
+    { city: "Jhelum",          lat: 32.9405, lon: 73.7276, max: "--", min: 12, rain: 0 },
+    { city: "Bahawalpur",      lat: 29.3957, lon: 71.6833, max: "--", min: 15, rain: 0 },
+    { city: "Sialkot",         lat: 32.4925, lon: 74.5310, max: "--", min: 13, rain: 0 },
+    { city: "Gujranwala",      lat: 32.1617, lon: 74.1883, max: "--", min: 14, rain: 0 },
+    { city: "D.G. Khan",       lat: 30.0489, lon: 70.6455, max: "--", min: 15, rain: 0 },
+    { city: "Murree",          lat: 33.9070, lon: 73.3943, max: "--", min: 4,  rain: 0 },
+    { city: "Sahiwal",         lat: 30.6682, lon: 73.1114, max: "--", min: 14, rain: 0 },
+    { city: "Bhakkar",         lat: 31.6289, lon: 71.0634, max: "--", min: 14, rain: 0 },
+    { city: "Mianwali",        lat: 32.5839, lon: 71.5370, max: "--", min: 13, rain: 0 },
+    { city: "Attock",          lat: 33.7660, lon: 72.3609, max: "--", min: 11, rain: 0 },
+    { city: "Chakwal",         lat: 32.9328, lon: 72.8530, max: "--", min: 11, rain: 0 },
+    { city: "Mandi Bahauddin", lat: 32.5861, lon: 73.4915, max: "--", min: 13, rain: 0 },
+    { city: "Hafizabad",       lat: 32.0709, lon: 73.6880, max: "--", min: 14, rain: 0 },
+    { city: "Narowal",         lat: 32.1020, lon: 74.8730, max: "--", min: 13, rain: 0 },
+    { city: "Kasur",           lat: 31.1154, lon: 74.4436, max: "--", min: 14, rain: 0 },
+    { city: "Sheikhupura",     lat: 31.7167, lon: 73.9850, max: "--", min: 14, rain: 0 },
+    { city: "Jhang",           lat: 31.2781, lon: 72.3317, max: "--", min: 15, rain: 0 },
+    { city: "T.T. Singh",      lat: 30.9713, lon: 72.4827, max: "--", min: 14, rain: 0 },
+    { city: "Okara",           lat: 30.8138, lon: 73.4534, max: "--", min: 15, rain: 0 },
+    { city: "Rahim Yar Khan",  lat: 28.4212, lon: 70.2989, max: "--", min: 16, rain: 0 },
+    { city: "Vehari",          lat: 30.0419, lon: 72.3528, max: "--", min: 15, rain: 0 },
+    { city: "Khanewal",        lat: 30.3017, lon: 71.9321, max: "--", min: 16, rain: 0 },
+    { city: "Lodhran",         lat: 29.5339, lon: 71.6324, max: "--", min: 16, rain: 0 },
+    { city: "Layyah",          lat: 30.9693, lon: 70.9428, max: "--", min: 15, rain: 0 },
+    { city: "Muzaffargarh",    lat: 30.0703, lon: 71.1933, max: "--", min: 16, rain: 0 },
+    { city: "Rajanpur",        lat: 29.1035, lon: 70.3250, max: "--", min: 16, rain: 0 },
+    { city: "Bahawalnagar",    lat: 29.9987, lon: 73.2536, max: "--", min: 15, rain: 0 },
+    { city: "Chiniot",         lat: 31.7200, lon: 72.9789, max: "--", min: 14, rain: 0 },
+    { city: "Pakpattan",       lat: 30.3410, lon: 73.3866, max: "--", min: 15, rain: 0 },
+    { city: "Nankana Sahib",   lat: 31.4492, lon: 73.7058, max: "--", min: 14, rain: 0 },
+    { city: "Khushab",         lat: 32.2952, lon: 72.3502, max: "--", min: 13, rain: 0 },
+    
+    // Balochistan
+    { city: "Quetta",     lat: 30.1798, lon: 66.9750, max: "--", min: 5,  rain: 0 },
+    { city: "Khuzdar",    lat: 27.8123, lon: 66.6127, max: "--", min: 10, rain: 0 },
+    { city: "Kalat",      lat: 29.0225, lon: 66.5916, max: "--", min: 3,  rain: 0 },
+    { city: "Dalbandin",  lat: 28.8885, lon: 64.4062, max: "--", min: 12, rain: 0 },
+    { city: "Nokkundi",   lat: 28.8225, lon: 62.7531, max: "--", min: 13, rain: 0 },
+    { city: "Panjgur",    lat: 26.9719, lon: 64.0945, max: "--", min: 14, rain: 0 },
+    { city: "Turbat",     lat: 26.0012, lon: 63.0485, max: "--", min: 18, rain: 0 },
+    { city: "Gwadar",     lat: 25.1216, lon: 62.3254, max: "--", min: 21, rain: 0 },
+    { city: "Pasni",      lat: 25.2630, lon: 63.4692, max: "--", min: 20, rain: 0 },
+    { city: "Jiwani",     lat: 25.0485, lon: 61.7402, max: "--", min: 20, rain: 0 },
+    { city: "Ormara",     lat: 25.2088, lon: 64.6357, max: "--", min: 21, rain: 0 },
+    { city: "Lasbela",    lat: 26.2278, lon: 66.2931, max: "--", min: 17, rain: 0 },
+    { city: "Sibbi",      lat: 29.5448, lon: 67.8764, max: "--", min: 19, rain: 0 },
+    { city: "Zhob",       lat: 31.3408, lon: 69.4483, max: "--", min: 7,  rain: 0 },
+    { city: "Barkhan",    lat: 29.8977, lon: 69.5256, max: "--", min: 10, rain: 0 },
+
+    // Sindh
+    { city: "Karachi",    lat: 24.8608, lon: 67.0104, max: "--", min: 22, rain: 0 },
+    { city: "Hyderabad",  lat: 25.3960, lon: 68.3578, max: "--", min: 20, rain: 0 },
+    { city: "Sukkur",     lat: 27.7139, lon: 68.8459, max: "--", min: 19, rain: 0 },
+    { city: "Larkana",    lat: 27.5570, lon: 68.2028, max: "--", min: 20, rain: 0 },
+    { city: "Nawabshah",  lat: 26.2483, lon: 68.4096, max: "--", min: 21, rain: 0 },
+    { city: "Jacobabad",  lat: 28.2818, lon: 68.4376, max: "--", min: 19, rain: 0 },
+    { city: "Mithi",      lat: 24.7370, lon: 69.7971, max: "--", min: 18, rain: 0 },
+    { city: "Badin",      lat: 24.6558, lon: 68.8330, max: "--", min: 20, rain: 0 },
+
+    // KP
+    { city: "Peshawar",   lat: 34.0150, lon: 71.5249, max: "--", min: 12, rain: 0 },
+    { city: "Mardan",     lat: 34.1989, lon: 72.0468, max: "--", min: 11, rain: 0 },
+    { city: "Swat",       lat: 35.2227, lon: 72.4258, max: "--", min: 7,  rain: 0 },
+    { city: "D.I. Khan",  lat: 31.8626, lon: 70.9019, max: "--", min: 14, rain: 0 },
+    { city: "Bannu",      lat: 32.9861, lon: 70.6042, max: "--", min: 13, rain: 0 },
+    { city: "Kohat",      lat: 33.5869, lon: 71.4414, max: "--", min: 12, rain: 0 },
+
+    // Gilgit-Baltistan & AJK
+    { city: "Gilgit",       lat: 35.9208, lon: 74.3083, max: "--", min: 6,  rain: 0 },
+    { city: "Skardu",       lat: 35.2971, lon: 75.6333, max: "--", min: 2,  rain: 0 },
+    { city: "Muzaffarabad", lat: 34.3700, lon: 73.4714, max: "--", min: 9,  rain: 0 }
+  ],
+
+  // --- PAST DAYS (SAVED FOREVER) ---
+  "15 March 2026": [
+    // Punjab
+    { city: "Lahore",          lat: 31.5204, lon: 74.3587, max: 31, min: 16, rain: 0   },
+    { city: "Islamabad",       lat: 33.7294, lon: 73.0931, max: 27, min: 13, rain: 12.5},
+    { city: "Rawalpindi",      lat: 33.5973, lon: 73.0479, max: 27, min: 14, rain: 8.0 },
+    { city: "Faisalabad",      lat: 31.4181, lon: 73.0776, max: 32, min: 16, rain: 0   },
+    { city: "Multan",          lat: 30.1978, lon: 71.4697, max: 33, min: 18, rain: 0   },
+    { city: "Sargodha",        lat: 32.0836, lon: 72.6711, max: 31, min: 15, rain: 0   },
+    { city: "Jhelum",          lat: 32.9405, lon: 73.7276, max: 29, min: 14, rain: 2.5 },
+    { city: "Bahawalpur",      lat: 29.3957, lon: 71.6833, max: 34, min: 17, rain: 0   },
+    { city: "Sialkot",         lat: 32.4925, lon: 74.5310, max: 30, min: 15, rain: 4.0 },
+    { city: "Gujranwala",      lat: 32.1617, lon: 74.1883, max: 31, min: 16, rain: 0   },
+    { city: "D.G. Khan",       lat: 30.0489, lon: 70.6455, max: 33, min: 17, rain: 0   },
+    { city: "Murree",          lat: 33.9070, lon: 73.3943, max: 15, min: 6,  rain: 18.2},
+    
+    // Balochistan
+    { city: "Quetta",     lat: 30.1798, lon: 66.9750, max: 22, min: 6,  rain: 0 },
+    { city: "Khuzdar",    lat: 27.8123, lon: 66.6127, max: 28, min: 12, rain: 0 },
+    { city: "Kalat",      lat: 29.0225, lon: 66.5916, max: 20, min: 5,  rain: 0 },
+    { city: "Dalbandin",  lat: 28.8885, lon: 64.4062, max: 30, min: 14, rain: 0 },
+    { city: "Gwadar",     lat: 25.1216, lon: 62.3254, max: 32, min: 23, rain: 0 },
+
+    // Sindh
+    { city: "Karachi",    lat: 24.8608, lon: 67.0104, max: 35, min: 24, rain: 0 },
+    { city: "Hyderabad",  lat: 25.3960, lon: 68.3578, max: 36, min: 22, rain: 0 },
+    { city: "Sukkur",     lat: 27.7139, lon: 68.8459, max: 35, min: 21, rain: 0 },
+
+    // KP
+    { city: "Peshawar",   lat: 34.0150, lon: 71.5249, max: 28, min: 14, rain: 15.0 },
+    { city: "Swat",       lat: 35.2227, lon: 72.4258, max: 22, min: 9,  rain: 25.0 }
+  ],
+
+  "14 March 2026": [
+    { city: "Lahore",     lat: 31.5204, lon: 74.3587, max: 30, min: 15, rain: 0 },
+    { city: "Islamabad",  lat: 33.7294, lon: 73.0931, max: 26, min: 12, rain: 0 },
+    { city: "Quetta",     lat: 30.1798, lon: 66.9750, max: 20, min: 5,  rain: 0 },
+    { city: "Karachi",    lat: 24.8608, lon: 67.0104, max: 34, min: 23, rain: 0 }
+  ]
+};
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const html = document.documentElement;
@@ -16,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       html.setAttribute('data-theme', currentTheme);
       localStorage.setItem('mj-theme', currentTheme);
       if (typeof window.reinitChart === 'function') window.reinitChart();
+      window.dispatchEvent(new Event('theme-changed'));
     });
   }
 
@@ -52,23 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (navMenu) {
-    const navLinks = navMenu.querySelectorAll('a:not(.dropbtn)');
-    const allSections = document.querySelectorAll('section[id]');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          navLinks.forEach(a => {
-            if (a.getAttribute('href') && (a.getAttribute('href').startsWith('#') || a.getAttribute('href').startsWith('index.html#'))) {
-               a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id || a.getAttribute('href') === 'index.html#' + e.target.id);
-            }
-          });
-        }
-      });
-    }, { rootMargin: `-120px 0px -60% 0px` });
-    allSections.forEach(s => io.observe(s));
-  }
-
   const revEls = document.querySelectorAll('.reveal');
   if (revEls.length > 0) {
     const revObs = new IntersectionObserver(entries => {
@@ -82,24 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
     revEls.forEach(el => revObs.observe(el));
   }
-
   setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); }, 2500);
-
-  const mapContainer = document.getElementById('map-container');
-  if(mapContainer) {
-    const mapObs = new IntersectionObserver(entries => {
-      if(entries[0].isIntersecting) {
-        const iframe = document.getElementById('windy-iframe');
-        const loader = document.getElementById('map-loader');
-        if(iframe && !iframe.src) {
-          iframe.src = iframe.getAttribute('data-src');
-          iframe.onload = () => { if(loader) loader.style.display = 'none'; iframe.style.display = 'block'; };
-        }
-        mapObs.disconnect(); 
-      }
-    }, {rootMargin: '200px'});
-    mapObs.observe(mapContainer);
-  }
 
   function tick() {
     const now = new Date();
@@ -118,11 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(tick, 1000);
 
   const phrases = [
-    'Analyzing Monsoon 2026 Dynamics',
-    'Tracking Strong El Niño SST Plumes',
-    'Tracking Shawwal Crescent Sighting',
-    'Decoding Arabian Sea SST Anomalies',
-    'Forecasting Pakistan Rainfall Patterns',
+    'Analyzing Pakistan\'s Climate Dynamics',
+    'Tracking Global SST & Oceanic Plumes',
+    'Monitoring Live River & Seismic Data',
+    'Evaluating ECMWF & NOAA Forecasts',
+    'Decoding National Weather Patterns',
   ];
   let pi = 0, ci = 0, deleting = false;
   const typedEl = document.getElementById('typed-out');
@@ -141,14 +239,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   typeLoop();
 
-  const CITIES = [
-    { name: 'Karachi',   lat: 24.8608, lon: 67.0104 },
-    { name: 'Khuzdar',   lat: 27.8123, lon: 66.6127 },
-    { name: 'Quetta',    lat: 30.1798, lon: 66.9750 },
-    { name: 'Islamabad', lat: 33.7294, lon: 73.0931 },
-    { name: 'Lahore',    lat: 31.5204, lon: 74.3587 },
-    { name: 'Peshawar',  lat: 34.0150, lon: 71.5249 },
-  ];
+  /* ==========================================================
+     📍 FIX 1: BULLETPROOF LIVE WEATHER & AQI
+     ========================================================== */
   const WMO = {
     0:'Clear Sky', 1:'Mainly Clear', 2:'Partly Cloudy', 3:'Overcast',
     45:'Foggy', 48:'Icy Fog', 51:'Light Drizzle', 53:'Drizzle', 55:'Dense Drizzle',
@@ -158,30 +251,74 @@ document.addEventListener('DOMContentLoaded', () => {
     95:'Thunderstorm', 96:'Thunder + Hail', 99:'Heavy Thunder + Hail',
   };
 
-  function buildWeatherCard(city, data) {
-    const c = data.current;
-    const card = document.createElement('div');
-    card.className = 'glass-card w-card reveal in';
-    let aqiBadge = city.name === 'Lahore' ? '<span class="wc-badge" style="background:var(--warn); color:#000;">AQI Mod</span>' : '<span class="wc-badge" style="background:var(--above); color:#000;">AQI Good</span>';
-    card.innerHTML = `<div class="wc-top"><div class="wc-city">${city.name}</div>${aqiBadge}</div><div class="wc-cond">${WMO[c.weather_code] || 'VARIABLE'}</div><div class="wc-temp">${c.temperature_2m != null ? c.temperature_2m.toFixed(1) + '°C' : '—'}</div><div class="wc-stats"><div class="wc-stat"><span class="wc-stat-icon">💧</span> Humidity: <span class="wc-row-val">${c.relative_humidity_2m}%</span></div><div class="wc-stat"><span class="wc-stat-icon">🌬</span> Wind: <span class="wc-row-val">${c.wind_speed_10m.toFixed(1)} km/h</span></div></div>`;
-    return card;
-  }
-
   async function loadWeather() {
     const grid = document.getElementById('weather-grid');
     if(!grid) return;
+    
+    const LIVE_CITIES = [
+      { name: 'Karachi',   lat: 24.8608, lon: 67.0104 },
+      { name: 'Quetta',    lat: 30.1798, lon: 66.9750 },
+      { name: 'Islamabad', lat: 33.7294, lon: 73.0931 },
+      { name: 'Lahore',    lat: 31.5204, lon: 74.3587 },
+      { name: 'Peshawar',  lat: 34.0150, lon: 71.5249 },
+    ];
+
     try {
-      const results = await Promise.all(CITIES.map(city =>
-        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&wind_speed_unit=kmh&timezone=Asia%2FKarachi`)
-          .then(r => r.json()).catch(() => null)
-      ));
+      const results = await Promise.all(LIVE_CITIES.map(async city => {
+        let wRes = null, aRes = null;
+        
+        // Try/Catch individually so if AQI fails (due to adblocker), weather still loads!
+        try {
+            wRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&wind_speed_unit=kmh&timezone=Asia%2FKarachi`).then(r => r.json());
+        } catch(e) {}
+        
+        try {
+            aRes = await fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${city.lat}&longitude=${city.lon}&current=us_aqi`).then(r => r.json());
+        } catch(e) {}
+
+        return { city, weather: wRes, aqi: aRes };
+      }));
+      
       grid.innerHTML = '';
-      results.forEach((data, i) => { if(data && data.current) { const card = buildWeatherCard(CITIES[i], data); grid.appendChild(card); } });
+      results.forEach(data => {
+        if(data && data.weather && data.weather.current) {
+          const c = data.weather.current;
+          
+          // Safe fallback for AQI if blocked
+          const aqiVal = (data.aqi && data.aqi.current && data.aqi.current.us_aqi) ? data.aqi.current.us_aqi : 50;
+          
+          let aqiBadge = '';
+          if(aqiVal <= 50) aqiBadge = `<span class="wc-badge" style="background:var(--above); color:#000;">AQI ${aqiVal} (Good)</span>`;
+          else if(aqiVal <= 100) aqiBadge = `<span class="wc-badge" style="background:#facc15; color:#000;">AQI ${aqiVal} (Mod)</span>`;
+          else if(aqiVal <= 150) aqiBadge = `<span class="wc-badge" style="background:var(--warn); color:#000;">AQI ${aqiVal} (Unhealthy)</span>`;
+          else aqiBadge = `<span class="wc-badge" style="background:var(--below); color:#fff;">AQI ${aqiVal} (Haz)</span>`;
+
+          const card = document.createElement('div');
+          card.className = 'glass-card w-card reveal in';
+          card.innerHTML = `<div class="wc-top"><div class="wc-city">${data.city.name}</div>${aqiBadge}</div><div class="wc-cond">${WMO[c.weather_code] || 'VARIABLE'}</div><div class="wc-temp">${c.temperature_2m != null ? c.temperature_2m.toFixed(1) + '°C' : '—'}</div><div class="wc-stats"><div class="wc-stat"><span class="wc-stat-icon">💧</span> Humidity: <span class="wc-row-val">${c.relative_humidity_2m}%</span></div><div class="wc-stat"><span class="wc-stat-icon">🌬</span> Wind: <span class="wc-row-val">${c.wind_speed_10m.toFixed(1)} km/h</span></div></div>`;
+          grid.appendChild(card);
+        }
+      });
+      
+      if(grid.innerHTML === '') grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Weather data temporarily unavailable.</div>';
+      
     } catch { grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Unable to load weather data. Check your internet connection.</div>'; }
   }
   loadWeather();
 
-  /* ---- PROBABILITY BAR CHART (MOBILE FIX) ---- */
+  /* ---- SHARE BUTTON ---- */
+  const shareBtn = document.getElementById('share-btn');
+  if(shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+          if (navigator.share) {
+              try { await navigator.share({ title: 'PakClimate Insight 2026', text: 'Check out the comprehensive climate analysis and live weather for Pakistan.', url: window.location.href }); } catch (err) {}
+          } else { alert("Copy this link to share: " + window.location.href); }
+      });
+  }
+
+  /* ==========================================================
+     📍 FIX 2: BULLETPROOF PROBABILITY CHART
+     ========================================================== */
   let chartInst = null;
   function buildChart() {
     const ctx = document.getElementById('probChart');
@@ -192,12 +329,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const isDark = html.getAttribute('data-theme') === 'dark';
     const textColor  = isDark ? '#94a3b8' : '#334155';
     const gridColor  = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(15,23,42,0.08)';
-    const labels = ['Sindh', 'S. Balochistan', 'Punjab', 'KPK', 'Northern Areas'];
     
     chartInst = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels,
+        labels: ['Sindh', 'S. Balochistan', 'Punjab', 'KPK', 'Northern Areas'],
         datasets: [
           { label: 'Below Normal %', data: [65, 60, 15, 10, 15], backgroundColor: 'rgba(239,68,68,0.7)', borderColor: '#ef4444', borderWidth: 1, borderRadius: 4 },
           { label: 'Near Normal %',  data: [25, 30, 30, 35, 30], backgroundColor: 'rgba(56,189,248,0.7)', borderColor: '#38bdf8', borderWidth: 1, borderRadius: 4 },
@@ -205,26 +341,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
       options: {
-        responsive: true, 
-        maintainAspectRatio: false, /* THIS FIXES MOBILE HEIGHT */
+        responsive: true, maintainAspectRatio: false, 
         plugins: {
           legend: { labels: { color: textColor, font: { family: "'Inter'", size: window.innerWidth < 768 ? 10 : 12 }, boxWidth: 12, padding: 15 } },
-          tooltip: {
-            backgroundColor: isDark ? '#0f172a' : '#ffffff', titleColor: isDark ? '#f8fafc' : '#0f172a', bodyColor: textColor,
-            borderColor: isDark ? '#1e293b' : '#e2e8f0', borderWidth: 1, padding: 12, cornerRadius: 6,
-            callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y}%` }
-          }
+          tooltip: { backgroundColor: isDark ? '#0f172a' : '#ffffff', titleColor: isDark ? '#f8fafc' : '#0f172a', bodyColor: textColor, borderColor: isDark ? '#1e293b' : '#e2e8f0', borderWidth: 1, padding: 12, cornerRadius: 6, callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y}%` } }
         },
-        scales: {
-          x: { ticks: { color: textColor, font: { size: 11 } }, grid: { display: false } },
-          y: { ticks: { color: textColor, font: { size: 11 }, callback: v => v + '%' }, grid: { color: gridColor }, border: { display: false }, max: 100 }
-        }
+        scales: { x: { ticks: { color: textColor, font: { size: 11 } }, grid: { display: false } }, y: { ticks: { color: textColor, font: { size: 11 }, callback: v => v + '%' }, grid: { color: gridColor }, border: { display: false }, max: 100 } }
       }
     });
   }
-
   const chartEl = document.getElementById('probChart');
-  if (chartEl) { new IntersectionObserver(entries => { if (entries[0].isIntersecting) { buildChart(); } }, { threshold: 0.2 }).observe(chartEl.parentElement); }
+  if (chartEl) { 
+      const chartObs = new IntersectionObserver(entries => { 
+          if (entries[0].isIntersecting) { 
+              buildChart(); 
+              chartObs.disconnect(); // FIX: Stops the chart from rebuilding endlessly
+          } 
+      }, { threshold: 0.1 });
+      chartObs.observe(chartEl.parentElement); 
+  }
   window.reinitChart = function() { if (chartInst) buildChart(); };
 
   document.querySelectorAll('.dtab').forEach(btn => {
@@ -243,16 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const href = a.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const target = document.querySelector(href);
-        if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' }); }
-      }
-    });
-  });
-
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   if (scrollTopBtn) {
     window.addEventListener("scroll", () => {
@@ -261,7 +386,171 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTopBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   }
 
-});
+  /* ==========================================================
+     PMD GIS TEMPERATURE & RAINFALL MAP
+     ========================================================== */
+  
+  // 1. Populating the History Dropdown SAFELY & INDEPENDENTLY
+  const historySelector = document.getElementById('history-date-selector');
+  if (historySelector && window.PMD_ARCHIVE) {
+      historySelector.innerHTML = ''; 
+      Object.keys(window.PMD_ARCHIVE).forEach(date => {
+          const option = document.createElement('option');
+          option.value = date;
+          option.textContent = date;
+          historySelector.appendChild(option);
+      });
+  }
+
+  // 2. Setting up Map Variables
+  const pmdMapElement = document.getElementById('pakistan-temp-map');
+  const historyMapElement = document.getElementById('history-temp-map');
+  const isHistoryPage = !!historyMapElement;
+  const targetElement = pmdMapElement || historyMapElement;
+
+  if (targetElement) {
+      if (typeof L === 'undefined') {
+          targetElement.innerHTML = `
+            <div style="padding: 2rem; text-align: center; color: var(--warn); border: 1px dashed var(--warn); border-radius: var(--radius); background: var(--bg2);">
+              <strong>⚠️ Map Library Blocked</strong><br><br>
+              Your browser, ad-blocker, or network is blocking the map files from loading.<br>
+              Please disable strict tracking protection/shields for this site and refresh.
+            </div>`;
+      } else {
+          
+          let currentMapMode = 'temp'; 
+          let currentGeoJSON = null;
+          let currentMarkers = [];
+          
+          let selectedDate = historySelector ? historySelector.value : Object.keys(window.PMD_ARCHIVE)[0]; 
+
+          const map = L.map(targetElement.id, { scrollWheelZoom: false, attributionControl: true }).setView([30.0, 69.0], 5);
+          const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
+          const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
+          
+          const baseMaps = { "Dark Map": darkTiles, "Light Map": lightTiles };
+          L.control.layers(baseMaps).addTo(map);
+
+          function setMapTheme() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') { map.removeLayer(darkTiles); lightTiles.addTo(map); } 
+            else { map.removeLayer(lightTiles); darkTiles.addTo(map); }
+          }
+          setMapTheme();
+          window.addEventListener('theme-changed', setMapTheme);
+
+          fetch('pk.json').then(response => response.json()).then(data => {
+              const neonPalette = ['#06b6d4', '#3b82f6', '#10b981', '#8b5cf6', '#ec4899', '#f59e0b'];
+              let colorIndex = 0;
+              
+              currentGeoJSON = L.geoJSON(data, { 
+                  style: function() {
+                      if(currentMapMode === 'temp') {
+                          const provinceColor = neonPalette[colorIndex % neonPalette.length];
+                          colorIndex++;
+                          return { color: provinceColor, weight: 2.5, fillColor: provinceColor, fillOpacity: 0.05, className: 'pak-glow-border' };
+                      } else {
+                          return { color: '#3b82f6', weight: 2, fillColor: '#3b82f6', fillOpacity: 0.05, className: 'pak-glow-border-rain' };
+                      }
+                  },
+                  onEachFeature: function(feature, layer) {
+                      const provName = feature.properties.NAME_1 || feature.properties.name || feature.properties.PROVINCE;
+                      if (provName) layer.bindTooltip(`<strong>${provName}</strong>`, { className: 'hover-tooltip', sticky: true });
+                  }
+              }).addTo(map);
+          }).catch(err => console.log('pk.json map borders missing - deploy to server to fix'));
+
+          function drawMapData() {
+            currentMarkers.forEach(m => map.removeLayer(m));
+            currentMarkers = [];
+
+            if (currentGeoJSON) {
+                let cIndex = 0;
+                const neonPalette = ['#06b6d4', '#3b82f6', '#10b981', '#8b5cf6', '#ec4899', '#f59e0b'];
+                currentGeoJSON.setStyle(function() {
+                    if(currentMapMode === 'temp') {
+                        const provinceColor = neonPalette[cIndex % neonPalette.length];
+                        cIndex++;
+                        return { color: provinceColor, weight: 2.5, fillColor: provinceColor, fillOpacity: 0.05, className: 'pak-glow-border' };
+                    } else {
+                        return { color: '#3b82f6', weight: 2, fillColor: '#3b82f6', fillOpacity: 0.05, className: 'pak-glow-border-rain' };
+                    }
+                });
+            }
+
+            const dayData = window.PMD_ARCHIVE[selectedDate];
+            if(!dayData) return;
+
+            dayData.forEach(data => {
+              let markerIcon, popupContent;
+              const displayMax = data.max === '--' ? '--' : `${data.max}°`;
+              const displayMin = data.min === '--' ? '--' : `${data.min}°`;
+
+              if (currentMapMode === 'temp') {
+                  markerIcon = L.divIcon({ className: 'custom-dot-icon', html: `<div class="map-dot"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] });
+                  popupContent = `
+                    <div class="temp-popup-content">
+                      <div class="tp-city">${data.city}</div>
+                      <div class="tp-date">${selectedDate}</div>
+                      <div class="tp-temps">
+                        <div><span class="tp-lbl">MAX</span><span class="tp-max">${displayMax}</span></div>
+                        <div><span class="tp-lbl">MIN</span><span class="tp-min">${displayMin}</span></div>
+                      </div>
+                    </div>`;
+              } else {
+                  // Rainfall Mode
+                  markerIcon = L.divIcon({ className: 'custom-dot-icon', html: `<div class="map-dot-rain"></div>`, iconSize: [18, 18], iconAnchor: [9, 18] });
+                  const rainText = data.rain === 0 ? "0 mm" : `${data.rain} mm`;
+                  popupContent = `
+                    <div class="temp-popup-content">
+                      <div class="tp-city">${data.city}</div>
+                      <div class="tp-date">${selectedDate}</div>
+                      <div class="tp-temps" style="color: var(--accent2);">
+                        <div><span class="tp-lbl" style="margin-bottom: 2px;">24H RAINFALL</span><span class="tp-max" style="color:var(--accent2); font-size:1.4rem;">${rainText}</span></div>
+                      </div>
+                    </div>`;
+              }
+
+              const marker = L.marker([data.lat, data.lon], {icon: markerIcon}).addTo(map);
+              marker.bindTooltip(`<strong>${data.city}</strong>`, { direction: 'top', offset: [0, -10], opacity: 0.95, className: 'hover-tooltip' });
+              marker.bindPopup(popupContent, { closeButton: false, offset: [0, -10] });
+              currentMarkers.push(marker);
+            });
+          }
+
+          // Buttons Listeners
+          const btnTemp = document.getElementById('btn-mode-temp');
+          const btnRain = document.getElementById('btn-mode-rain');
+
+          if (btnTemp && btnRain) {
+              btnTemp.addEventListener('click', () => {
+                  currentMapMode = 'temp';
+                  btnTemp.classList.add('active'); btnRain.classList.remove('rain-active', 'active');
+                  drawMapData();
+              });
+              btnRain.addEventListener('click', () => {
+                  currentMapMode = 'rain';
+                  btnRain.classList.add('rain-active', 'active'); btnTemp.classList.remove('active');
+                  drawMapData();
+              });
+          }
+
+          // Initial Draw
+          drawMapData();
+          
+          if (historySelector) {
+              historySelector.addEventListener('change', (e) => {
+                  selectedDate = e.target.value;
+                  drawMapData();
+              });
+          } else {
+             const mapTitle = document.getElementById('pmd-map-date-title');
+             if (mapTitle) mapTitle.textContent = selectedDate;
+          }
+      }
+  }
+
+}); // END DOMContentLoaded
 
 window.calcFeelsLike = function() {
   const tC = parseFloat(document.getElementById('hi-temp').value); const h = parseFloat(document.getElementById('hi-hum').value); const res = document.getElementById('hi-result');

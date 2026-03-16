@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -23,7 +26,7 @@
       <span class="ticker-item">⚠️ <strong>WESTERN DISTURBANCE:</strong> Potent weather system approaching March 18. Widespread heavy precipitation expected across KP, Punjab, and North Balochistan.</span>
       <span class="ticker-item">🚨 <strong>ENSO WATCH:</strong> ECMWF plumes indicate a rapid warming trajectory. Strong El Niño expected by peak summer 2026, posing severe drought risk to Sindh.</span>
       <span class="ticker-item">🌙 <strong>ASTRONOMY:</strong> Shawwal 1447 AH moon sighting confirmed impossible for March 19. Eid-ul-Fitr projected for Saturday, March 21, 2026.</span>
-      <span class="ticker-item">🚀 <strong>PLATFORM UPDATE:</strong> New interactive data layers and model integration Underway. Check back for enhancements.</span>
+      <span class="ticker-item">🌍 <strong>SYSTEM UPDATE:</strong> Live AQI and Regional Seismic monitoring systems are now online.</span>
     </div>
   </div>
 </div>
@@ -36,11 +39,12 @@
     </a>
     <ul class="nav-menu" id="nav-menu">
       <li><a href="#hero">Home</a></li>
-      <li><a href="#live">Live Weather</a></li>
+      <li><a href="#live">Weather</a></li>
+      <li><a href="rivers.html">Rivers</a></li>
+      <li><a href="earthquakes.html">Quakes</a></li>
       <li><a href="#rainfall-update">Alerts</a></li>
-      <li><a href="#moon">Moon</a></li>
-      <li><a href="#live-map">Radar</a></li>
-      <li><a href="#outlook">Outlook 2026</a></li>
+      <li><a href="#outlook">Outlook</a></li>
+      <li><a href="history.html">History</a></li>
       <li class="dropdown">
         <a href="#" class="dropbtn">Resources ▾</a>
         <div class="dropdown-content">
@@ -68,7 +72,7 @@
 
   <div class="hero-body">
     <div class="hero-pill reveal">
-      <span class="badge-dot"></span> 🌦 Seasonal Forecast · Pakistan · 2026
+      <span class="badge-dot"></span> 🌦 National Meteorological Dashboard · Pakistan
     </div>
 
     <h1 class="hero-title reveal">
@@ -81,12 +85,12 @@
     </div>
 
     <p class="hero-desc reveal">
-      Welcome. This platform provides an independent, deep-dive analysis of monsoon dynamics, Pacific Ocean signals, and seasonal rainfall projections for Pakistan. I navigate global ECMWF and NOAA datasets to bring you clear, highly accurate climate insights.
+      Welcome. This platform provides an independent, deep-dive analysis of Pakistan's complete climate profile—from winter western disturbances and summer monsoons to real-time atmospheric, hydrological, and seismic tracking. By evaluating global ECMWF and NOAA models, I aim to bring you clear, accurate, and comprehensive meteorological insights.
     </p>
 
     <div class="hero-btns reveal">
       <a href="#outlook" class="btn-primary">Read Outlook 2026</a>
-      <a href="#rainfall-update" class="btn-outline">View Active Alerts</a>
+      <a href="#pmd-map" class="btn-outline">GIS Weather Map ↓</a>
     </div>
 
     <div class="hero-clock reveal">
@@ -107,8 +111,8 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Real-Time Data</span>
-      <h2 class="sec-title">Current Weather <span class="accent">Across Pakistan</span></h2>
-      <p class="sec-sub">Live atmospheric conditions pulled fresh from meteorological servers on every page load.</p>
+      <h2 class="sec-title">Current Weather <span class="accent">& AQI</span></h2>
+      <p class="sec-sub">Live atmospheric and air quality conditions pulled fresh from meteorological servers.</p>
     </div>
     <div class="weather-grid" id="weather-grid">
       <div class="w-loading" id="w-loading">
@@ -118,7 +122,31 @@
   </div>
 </section>
 
-<section class="section section-alt" id="rainfall-update">
+<section class="section section-alt" id="pmd-map">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">National GIS Mapping</span>
+      <h2 class="sec-title">Rainfall & Temps <span class="accent">GIS Map</span></h2>
+      <p class="sec-sub">Official climate data recorded by the PMD for <strong id="pmd-map-date-title" style="color: var(--text1);">Loading Date...</strong>.</p>
+    </div>
+    
+    <div class="map-toggles reveal">
+      <button id="btn-mode-temp" class="map-toggle active">🌡 Temperatures</button>
+      <button id="btn-mode-rain" class="map-toggle">🌧 Rainfall</button>
+    </div>
+    
+    <div class="map-wrap glass-card reveal" style="padding: 0; margin-bottom: 2rem;">
+      <div id="pakistan-temp-map" style="width: 100%; height: 550px; z-index: 1;"></div>
+    </div>
+    
+    <div style="text-align: center;" class="reveal">
+      <a href="history.html" class="btn-primary" style="font-size: 0.85rem; padding: 0.8rem 2.5rem; display: inline-block;">📅 View Past Map Archive</a>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section" id="rainfall-update">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><span class="pulse-red"></span> Weather Alert</span>
@@ -149,7 +177,7 @@
   </div>
 </section>
 
-<section class="section" id="moon">
+<section class="section section-alt" id="moon">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Astronomical Data</span>
@@ -177,23 +205,26 @@
   </div>
 </section>
 
-<section class="section section-alt" id="live-map">
+<section class="section" id="live-map">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Interactive Radar</span>
       <h2 class="sec-title">Live Atmospheric <span class="accent">Currents</span></h2>
       <p class="sec-sub">Real-time wind and weather patterns across South Asia, powered by ECMWF data. Scroll to zoom and drag to pan.</p>
     </div>
-    <div class="map-wrap glass-card reveal" id="map-container">
-      <div class="w-loading" id="map-loader" style="padding: 100px 0;">
-         <div class="spin"></div><span>Initializing Radar...</span>
-      </div>
-      <iframe id="windy-iframe" style="width: 100% !important; height: 550px !important; min-height: 550px !important; display: none; border-radius: var(--radius-sm);" data-src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=28.5&lon=69.5" frameborder="0" title="Windy Interactive Weather Map"></iframe>
+    
+    <div class="map-wrap glass-card reveal" style="padding: 0.5rem;">
+      <iframe 
+        src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=%C2%B0C&metricWind=km/h&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=28.5&lon=69.5" 
+        loading="lazy" 
+        style="width: 100% !important; height: 550px !important; min-height: 550px !important; border-radius: var(--radius-sm); border: none; display: block;" 
+        title="Windy Interactive Weather Map">
+      </iframe>
     </div>
+
   </div>
 </section>
-
-<section class="section" id="outlook">
+<section class="section section-alt" id="outlook">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Seasonal Analysis</span>
@@ -221,7 +252,6 @@
           <h3>Precipitation Outlook Breakdown</h3>
           <p>According to the latest probability models, the southern half of Pakistan (Sindh and Balochistan) is dominated by dry signals. However, during El Niño years, the monsoon trough frequently shifts northward toward the Himalayan foothills.</p>
           <p>This shift, combined with mid-latitude westerly interactions, historically drives <strong>above-normal rainfall</strong> across Punjab, Khyber Pakhtunkhwa, and Gilgit-Baltistan. These northern regions should remain on high alert for intense downpours and glacial melt flooding.</p>
-          <p><em>*Please note: These are early spring observations. Climate models can fluctuate, and I will continue to update this forecast as the core season approaches.</em></p>
         </div>
 
         <div class="a-block reveal">
@@ -284,7 +314,9 @@
         <div class="a-block reveal">
           <h3>Probability Distribution</h3>
           <div class="chart-wrap glass-card">
-            <canvas id="probChart"></canvas>
+            <div class="chart-container">
+              <canvas id="probChart"></canvas>
+            </div>
           </div>
         </div>
 
@@ -309,245 +341,13 @@
           </div>
           <p class="sb-note">Strong confidence in El Niño development. The exact magnitude will dictate the severity of the deficit in the south.</p>
         </div>
-        <div class="sb-card glass-card reveal">
-          <div class="sb-label">Quick Summary</div>
-          <div class="quick-badges">
-            <span class="qb qb-below">Sindh · Below Normal</span>
-            <span class="qb qb-below">S. Balochistan · Below Normal</span>
-            <span class="qb qb-above">Punjab · Above Normal</span>
-            <span class="qb qb-above">KP · Above Normal</span>
-            <span class="qb qb-above">North · Above Normal</span>
-          </div>
-        </div>
-        <div class="sb-card glass-card reveal">
-          <div class="sb-label">Departure Range</div>
-          <div class="dep-bars">
-            <div class="dep-row">
-              <span class="dep-region">Sindh</span>
-              <div class="dep-track"><div class="dep-fill dep-b" style="width:90%">−30 to −50%</div></div>
-            </div>
-            <div class="dep-row">
-              <span class="dep-region">Punjab</span>
-              <div class="dep-track"><div class="dep-fill dep-a" style="width:80%">+20 to +40%</div></div>
-            </div>
-            <div class="dep-row">
-              <span class="dep-region">KP</span>
-              <div class="dep-track"><div class="dep-fill dep-a" style="width:85%">+25 to +45%</div></div>
-            </div>
-          </div>
-        </div>
+        
+        <button id="share-btn" class="btn-outline reveal" style="margin-top: 1rem; width: 100%; border-style: dashed;">🔗 Share this Forecast</button>
       </aside>
     </div></div>
 </section>
 
-<section class="section section-alt" id="drivers">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Science</span>
-      <h2 class="sec-title">Climate <span class="accent">Drivers</span></h2>
-      <p class="sec-sub">The five large-scale ocean and atmosphere systems governing the South Asian monsoon.</p>
-    </div>
-
-    <div class="driver-tabs reveal">
-      <button class="dtab active" data-panel="enso">🌊 ENSO Plume</button>
-      <button class="dtab" data-panel="iod">🌡 IOD</button>
-      <button class="dtab" data-panel="sst">🌊 SST</button>
-      <button class="dtab" data-panel="tibet">🏔 Tibetan Plateau</button>
-      <button class="dtab" data-panel="mjo">🌀 MJO</button>
-    </div>
-
-    <div id="panel-enso" class="driver-panel glass-card active reveal">
-      <div class="dp-head">
-        <div class="dp-icon-box">01</div>
-        <div>
-          <span class="dp-badge dp-warn">Rapidly Warming · 2026</span>
-          <h3 class="dp-title">ENSO — El Niño Southern Oscillation</h3>
-        </div>
-      </div>
-      <div class="dp-body">
-        <div class="dp-text">
-          <p>ENSO is the dominant interannual climate signal for South Asian monsoon variability. Pacific anomalies are shooting upward, heavily favoring a strong El Niño. This weakens the Walker Circulation and suppresses monsoon convection over southern Pakistan.</p>
-          <div class="dp-callout">
-            <span>📊</span>
-            <p>Model plumes project anomalies crossing +1.5°C to +2.5°C by peak summer. This kind of Pacific forcing historically severely limits rainfall in Sindh and coastal Balochistan.</p>
-          </div>
-        </div>
-        <div class="dp-stats">
-          <div class="dp-stat"><span class="dps-label">Niño 3.4 Trajectory</span><span class="dps-val accent">> +1.5 °C</span><span class="dps-note">Summer 2026 estimate</span></div>
-          <div class="dp-stat"><span class="dps-label">El Niño Probability</span><span class="dps-val warn">85%</span></div>
-          <div class="dp-stat"><span class="dps-label">Neutral Probability</span><span class="dps-val">12%</span></div>
-          <div class="dp-impact"><span class="dpi-label">Monsoon Impact (South)</span><div class="dpi-track"><div class="dpi-fill neg" style="width:85%"></div></div><span class="dpi-text">Highly Unfavourable ⚠</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="panel-iod" class="driver-panel glass-card reveal">
-      <div class="dp-head">
-        <div class="dp-icon-box">02</div>
-        <div>
-          <span class="dp-badge dp-caution">Trending Negative · Monitor</span>
-          <h3 class="dp-title">Indian Ocean Dipole (IOD)</h3>
-        </div>
-      </div>
-      <div class="dp-body">
-        <div class="dp-text">
-          <p>The IOD measures the sea surface temperature difference across the Indian Ocean. A positive IOD warms the western basin, pulling moisture toward Pakistan. A negative IOD does the opposite. Currently, the IOD is neutral but models lean toward negative conditions, which would compound the El Niño dry spell in the south.</p>
-          <div class="dp-callout">
-            <span>🔬</span>
-            <p>If a strong El Niño pairs with a negative IOD, we are looking at an analogue similar to 2015, which brought notable monsoon deficits across the lower half of the country.</p>
-          </div>
-        </div>
-        <div class="dp-stats">
-          <div class="dp-stat"><span class="dps-label">IOD Index (Current)</span><span class="dps-val accent">+0.15 °C</span><span class="dps-note">Neutral</span></div>
-          <div class="dp-stat"><span class="dps-label">JJAS Forecast</span><span class="dps-val warn">−0.3 to −0.5°C</span></div>
-          <div class="dp-stat"><span class="dps-label">Historical Analog</span><span class="dps-val">2015 · 2009</span></div>
-          <div class="dp-impact"><span class="dpi-label">Monsoon Impact</span><div class="dpi-track"><div class="dpi-fill neg" style="width:65%"></div></div><span class="dpi-text">Mixed to Negative ⚠</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="panel-sst" class="driver-panel glass-card reveal">
-      <div class="dp-head">
-        <div class="dp-icon-box">03</div>
-        <div>
-          <span class="dp-badge dp-pos">Arabian Sea Warm · BoB Near-Normal</span>
-          <h3 class="dp-title">Sea Surface Temperature Anomalies</h3>
-        </div>
-      </div>
-      <div class="dp-body">
-        <div class="dp-text">
-          <p>SSTs in the Arabian Sea and Bay of Bengal directly modulate available monsoon moisture. The North Arabian Sea remains anomalously warm, which is the only major mitigating factor right now against the Pacific El Niño. This residual heat can sustain localized moisture surges.</p>
-          <div class="dp-callout">
-            <span>🌊</span>
-            <p>This warmth means that while overall rain will likely be below normal for Sindh, when it does rain along the coast, it can be short and explosive.</p>
-          </div>
-        </div>
-        <div class="dp-stats">
-          <div class="dp-stat"><span class="dps-label">N. Arabian Sea SST</span><span class="dps-val good">+0.4–0.7 °C</span><span class="dps-note">Above normal</span></div>
-          <div class="dp-stat"><span class="dps-label">Bay of Bengal SST</span><span class="dps-val">Near normal</span></div>
-          <div class="dp-stat"><span class="dps-label">Somali Jet</span><span class="dps-val warn">Slightly below</span></div>
-          <div class="dp-impact"><span class="dpi-label">Monsoon Impact</span><div class="dpi-track"><div class="dpi-fill pos" style="width:60%"></div></div><span class="dpi-text">Partially Favourable ✓</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="panel-tibet" class="driver-panel glass-card reveal">
-      <div class="dp-head">
-        <div class="dp-icon-box">04</div>
-        <div>
-          <span class="dp-badge dp-pos">Below-Normal Snow · Strong Heating</span>
-          <h3 class="dp-title">Tibetan Plateau Heating &amp; Snow Cover</h3>
-        </div>
-      </div>
-      <div class="dp-body">
-        <div class="dp-text">
-          <p>The Tibetan Plateau acts as a high-altitude heat source in summer — warm air rising over Tibet drives upper-level divergence that positions the South Asian anticyclone and steers BoB lows westward into Pakistan. Below-normal HKH snow cover in early 2026 accelerates spring heating, supporting an earlier monsoon onset for northern Pakistan.</p>
-          <div class="dp-callout">
-            <span>🏔</span>
-            <p>Below-normal snow cover accelerates GLOF risk in Gilgit-Baltistan. Warmer-than-normal glacial conditions through the summer are anticipated.</p>
-          </div>
-        </div>
-        <div class="dp-stats">
-          <div class="dp-stat"><span class="dps-label">HKH Snow Anomaly</span><span class="dps-val warn">−12%</span><span class="dps-note">Below long-term mean</span></div>
-          <div class="dp-stat"><span class="dps-label">Plateau Heating</span><span class="dps-val good">Above normal</span></div>
-          <div class="dp-stat"><span class="dps-label">GLOF Risk</span><span class="dps-val warn">Elevated</span></div>
-          <div class="dp-impact"><span class="dpi-label">Monsoon Impact</span><div class="dpi-track"><div class="dpi-fill pos" style="width:70%"></div></div><span class="dpi-text">Favourable for North ✓</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="panel-mjo" class="driver-panel glass-card reveal">
-      <div class="dp-head">
-        <div class="dp-icon-box">05</div>
-        <div>
-          <span class="dp-badge dp-caution">Active Monitoring Required</span>
-          <h3 class="dp-title">Madden–Julian Oscillation (MJO)</h3>
-        </div>
-      </div>
-      <div class="dp-body">
-        <div class="dp-text">
-          <p>The MJO is a 30–60 day tropical wave of enhanced convection propagating eastward around the globe. When its active phase is positioned over the Indian Ocean during monsoon months, it can temporarily overwhelm El Niño suppression and deliver intense rainfall pulses across Pakistan.</p>
-          <div class="dp-callout">
-            <span>🌀</span>
-            <p>MJO is the key wild-card for 2026. A well-timed MJO event over the Indian Ocean in July or August could dramatically alter the character of individual months within the season.</p>
-          </div>
-        </div>
-        <div class="dp-stats">
-          <div class="dp-stat"><span class="dps-label">Expected MJO Events</span><span class="dps-val accent">1–2 strong</span></div>
-          <div class="dp-stat"><span class="dps-label">Forecast Horizon</span><span class="dps-val">14–21 days</span></div>
-          <div class="dp-stat"><span class="dps-label">QBO Phase</span><span class="dps-val good">Easterly (favourable)</span></div>
-          <div class="dp-impact"><span class="dpi-label">Monsoon Impact</span><div class="dpi-track"><div class="dpi-fill pos" style="width:55%"></div></div><span class="dpi-text">Episodic Pulses Possible ✓</span></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="cities">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Reference Data</span>
-      <h2 class="sec-title">City Climate <span class="accent">Summaries</span></h2>
-      <p class="sec-sub">Long-period average monsoon rainfall and seasonal temperature ranges — 1991–2020 climatology.</p>
-    </div>
-    <div class="cities-grid">
-
-      <div class="city-card glass-card reveal">
-        <div class="cc-top"><h3 class="cc-name">Karachi</h3><span class="cc-province">Sindh</span></div>
-        <div class="cc-stats">
-          <div class="cc-stat"><span class="ccs-lbl">Avg. Monsoon Rainfall</span><span class="ccs-val mono">155 mm</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">Temp. Range (JJAS)</span><span class="ccs-val mono">28–36 °C</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">2026 Outlook</span><span class="ccs-val sig-below">Below Normal</span></div>
-        </div>
-        <p class="cc-desc">Pakistan's financial capital sits at the southwest tip of the monsoon domain. Its rainfall is short and explosive — single Arabian Sea events can account for the full season's average. Under a strong El Niño, moisture incursions become even rarer.</p>
-      </div>
-
-      <div class="city-card glass-card reveal">
-        <div class="cc-top"><h3 class="cc-name">Quetta</h3><span class="cc-province">Balochistan</span></div>
-        <div class="cc-stats">
-          <div class="cc-stat"><span class="ccs-lbl">Avg. Monsoon Rainfall</span><span class="ccs-val mono">48 mm</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">Temp. Range (JJAS)</span><span class="ccs-val mono">20–34 °C</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">2026 Outlook</span><span class="ccs-val sig-below">Below Normal</span></div>
-        </div>
-        <p class="cc-desc">High-altitude Quetta sits at 1,680 m on the western margin of monsoon influence. Rainfall is scarce and erratic. Most precipitation reaches the city as late-season moist incursions channelled northward through eastern Balochistan.</p>
-      </div>
-
-      <div class="city-card glass-card reveal">
-        <div class="cc-top"><h3 class="cc-name">Islamabad</h3><span class="cc-province">Federal Capital</span></div>
-        <div class="cc-stats">
-          <div class="cc-stat"><span class="ccs-lbl">Avg. Monsoon Rainfall</span><span class="ccs-val mono">686 mm</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">Temp. Range (JJAS)</span><span class="ccs-val mono">24–36 °C</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">2026 Outlook</span><span class="ccs-val sig-above">Above Normal</span></div>
-        </div>
-        <p class="cc-desc">Among the wettest monsoon cities in Pakistan. Orographic lifting along the Margalla Hills dramatically enhances BoB-sourced moisture. Urban flash flooding in low-lying nullahs is a recurring hazard during peak monsoon months.</p>
-      </div>
-
-      <div class="city-card glass-card reveal">
-        <div class="cc-top"><h3 class="cc-name">Lahore</h3><span class="cc-province">Punjab</span></div>
-        <div class="cc-stats">
-          <div class="cc-stat"><span class="ccs-lbl">Avg. Monsoon Rainfall</span><span class="ccs-val mono">448 mm</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">Temp. Range (JJAS)</span><span class="ccs-val mono">28–40 °C</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">2026 Outlook</span><span class="ccs-val sig-above">Above Normal</span></div>
-        </div>
-        <p class="cc-desc">Classic Punjab monsoon pattern: scorching June followed by a dramatic onset in late June or early July. The city is vulnerable when multiple BoB lows pass in rapid succession over five to seven days.</p>
-      </div>
-
-      <div class="city-card glass-card reveal">
-        <div class="cc-top"><h3 class="cc-name">Peshawar</h3><span class="cc-province">Khyber Pakhtunkhwa</span></div>
-        <div class="cc-stats">
-          <div class="cc-stat"><span class="ccs-lbl">Avg. Monsoon Rainfall</span><span class="ccs-val mono">193 mm</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">Temp. Range (JJAS)</span><span class="ccs-val mono">26–40 °C</span></div>
-          <div class="cc-stat"><span class="ccs-lbl">2026 Outlook</span><span class="ccs-val sig-above">Above Normal</span></div>
-        </div>
-        <p class="cc-desc">At the western edge of the core monsoon belt. Rainfall comes from direct monsoon incursions from the east combined with mid-latitude westerly interactions. August is typically the wettest month.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="about">
+<section class="section" id="about">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">About</span>
@@ -590,17 +390,18 @@
     </div>
     <div class="footer-links">
       <a href="#hero">Home</a>
-      <a href="#live">Live Weather</a>
-      <a href="#live-map">Radar</a>
-      <a href="#moon">Moon</a>
+      <a href="#live">Weather</a>
+      <a href="rivers.html">Rivers</a>
+      <a href="earthquakes.html">Quakes</a>
       <a href="#rainfall-update">Alerts</a>
+      <a href="#moon">Moon</a>
       <a href="#outlook">Outlook</a>
-      <a href="#drivers">Drivers</a>
+      <a href="history.html">History</a>
       <a href="tools.html">Calculators</a>
       <a href="resources.html">Resources</a>
       <a href="#about">About</a>
     </div>
-    <p class="footer-copy">© 2026 Mudasir Jameel Weather Analysis &nbsp;·&nbsp; Pakistan Monsoon Outlook</p>
+    <p class="footer-copy">© 2026 Mudasir Jameel Weather Analysis &nbsp;·&nbsp; Pakistan Climate & Meteorological Dashboard</p>
   </div>
 </footer>
 

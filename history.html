@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Live Climate Indicators — PakClimate Insight</title>
+  <title>Historical Data — PakClimate Insight</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
@@ -14,20 +15,7 @@
 
 <canvas id="rain-canvas"></canvas>
 <canvas id="particle-canvas"></canvas>
-
 <button id="scrollTopBtn" title="Go to top">↑</button>
-
-<div class="weather-ticker">
-  <div class="ticker-label">LIVE ALERTS</div>
-  <div class="ticker-wrap">
-    <div class="ticker-move">
-      <span class="ticker-item">⚠️ <strong>WESTERN DISTURBANCE:</strong> Potent weather system approaching March 18. Widespread heavy precipitation expected across KP, Punjab, and North Balochistan.</span>
-      <span class="ticker-item">🚨 <strong>ENSO WATCH:</strong> ECMWF plumes indicate a rapid warming trajectory. Strong El Niño expected by peak summer 2026, posing severe drought risk to Sindh.</span>
-      <span class="ticker-item">🌙 <strong>ASTRONOMY:</strong> Shawwal 1447 AH moon sighting confirmed impossible for March 19. Eid-ul-Fitr projected for Saturday, March 21, 2026.</span>
-      <span class="ticker-item">🌍 <strong>SYSTEM UPDATE:</strong> Live AQI and Regional Seismic monitoring systems are now online.</span>
-    </div>
-  </div>
-</div>
 
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
@@ -41,14 +29,13 @@
       <li><a href="rivers.html">Rivers</a></li>
       <li><a href="earthquakes.html">Quakes</a></li>
       <li><a href="index.html#rainfall-update">Alerts</a></li>
-      <li><a href="index.html#moon">Moon</a></li>
-      <li><a href="index.html#outlook">Outlook 2026</a></li>
-      <li><a href="history.html">History</a></li>
+      <li><a href="index.html#outlook">Outlook</a></li>
+      <li><a href="history.html" class="active">History</a></li>
       <li class="dropdown">
-        <a href="#" class="dropbtn active">Resources ▾</a>
+        <a href="#" class="dropbtn">Resources ▾</a>
         <div class="dropdown-content">
           <a href="tools.html">Calculators ⚡</a>
-          <a href="indicators.html" class="active">Live Indicators 🌍</a>
+          <a href="indicators.html">Live Indicators 🌍</a>
           <a href="resources.html">Data Sources</a>
         </div>
       </li>
@@ -66,33 +53,27 @@
 
 <section class="section" style="padding-top: 140px; min-height: 80vh;">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Real-Time Data</span>
-      <h2 class="sec-title">Global Climate <span class="accent">Indicators</span></h2>
-      <p class="sec-sub">Live monitoring of major oceanic and atmospheric indices impacting South Asian weather.</p>
+    <div class="sec-head">
+      <span class="eyebrow">Data Archive</span>
+      <h2 class="sec-title">Historical <span class="accent">Climate Data</span></h2>
+      <p class="sec-sub">Select a previous date from the dropdown to view the official PMD maximum/minimum temperature and rainfall records.</p>
     </div>
 
-    <div class="indicator-panel">
-      <div class="ind-card warn reveal">
-        <span class="ind-title">ENSO Index (Niño 3.4)</span>
-        <div class="ind-value" style="color: var(--below);">> +1.5 °C</div>
-        <p class="ind-desc">Strong El Niño conditions rapidly developing. Extreme suppressive influence on standard monsoon dynamics.</p>
-        <div class="ind-source">Data Ref: NOAA / ECMWF Forecast</div>
+    <div class="glass-card reveal" style="padding: 2rem;">
+      <div class="history-header">
+        <h3 style="font-family: var(--font-head); font-size: 1.2rem; color: var(--text1);">Select Archive Date:</h3>
+        <select id="history-date-selector" class="date-selector"></select>
       </div>
 
-      <div class="ind-card reveal">
-        <span class="ind-title">IOD Index (Indian Ocean Dipole)</span>
-        <div class="ind-value" style="color: var(--neutral);">+0.15 °C</div>
-        <p class="ind-desc">Currently in a neutral phase but trending negative. Models favor negative phase by JJAS.</p>
-        <div class="ind-source">Data Ref: BOM / NOAA</div>
+      <div class="map-toggles reveal" style="margin-top: 1rem;">
+        <button id="btn-mode-temp" class="map-toggle active">🌡 Temperatures</button>
+        <button id="btn-mode-rain" class="map-toggle">🌧 Rainfall</button>
       </div>
 
-      <div class="ind-card good reveal">
-        <span class="ind-title">MJO Phase (Madden-Julian Oscillation)</span>
-        <div class="ind-value" style="color: var(--above);">Phase 3</div>
-        <p class="ind-desc">Active over the Indian Ocean. Favorable for episodic, localized rainfall pulses across Pakistan.</p>
-        <div class="ind-source">Data Ref: NOAA CPC MJO Update</div>
+      <div class="map-wrap" style="padding: 0; margin-top: 0; border: 1px solid var(--border);">
+        <div id="history-temp-map" style="width: 100%; height: 550px; z-index: 1;"></div>
       </div>
+      
     </div>
   </div>
 </section>
@@ -108,12 +89,8 @@
       <a href="index.html#live">Weather</a>
       <a href="rivers.html">Rivers</a>
       <a href="earthquakes.html">Quakes</a>
-      <a href="index.html#rainfall-update">Alerts</a>
-      <a href="index.html#moon">Moon</a>
       <a href="index.html#outlook">Outlook</a>
-      <a href="history.html">History</a>
       <a href="tools.html">Calculators</a>
-      <a href="resources.html">Resources</a>
       <a href="index.html#about">About</a>
     </div>
     <p class="footer-copy">© 2026 Mudasir Jameel Weather Analysis &nbsp;·&nbsp; Pakistan Climate & Meteorological Dashboard</p>
