@@ -10,42 +10,42 @@
    - Evening (5 PM): Replace "--" with the official 'max' temp.
    ============================================================ */
 window.PMD_ARCHIVE = {
-  // --- 16 MARCH (MORNING UPDATE - WAITING FOR MAX TEMPS) ---
+  // --- 16 MARCH (MORNING UPDATE) ---
   "16 March 2026": [
     // Punjab
-    { city: "Lahore",          lat: 31.5204, lon: 74.3587, max: "--", min: 14, rain: 0 },
-    { city: "Islamabad",       lat: 33.7294, lon: 73.0931, max: "--", min: 12, rain: 0 },
-    { city: "Rawalpindi",      lat: 33.5973, lon: 73.0479, max: "--", min: 13, rain: 0 },
+    { city: "Lahore",          lat: 31.5204, lon: 74.3587, max: "--", min: 15.5, rain: 0 },
+    { city: "Islamabad",       lat: 33.7294, lon: 73.0931, max: "--", min: 11.5, rain: 22 },
+    { city: "Rawalpindi",      lat: 33.5973, lon: 73.0479, max: "--", min: 13, rain: 18 },
     { city: "Faisalabad",      lat: 31.4181, lon: 73.0776, max: "--", min: 14, rain: 0 },
     { city: "Multan",          lat: 30.1978, lon: 71.4697, max: "--", min: 16, rain: 0 },
     { city: "Sargodha",        lat: 32.0836, lon: 72.6711, max: "--", min: 14, rain: 0 },
     { city: "Jhelum",          lat: 32.9405, lon: 73.7276, max: "--", min: 12, rain: 0 },
-    { city: "Bahawalpur",      lat: 29.3957, lon: 71.6833, max: "--", min: 15, rain: 0 },
+    { city: "Bahawalpur",      lat: 29.3957, lon: 71.6833, max: "--", min: 15.5, rain: 0 },
     { city: "Sialkot",         lat: 32.4925, lon: 74.5310, max: "--", min: 13, rain: 0 },
-    { city: "Gujranwala",      lat: 32.1617, lon: 74.1883, max: "--", min: 14, rain: 0 },
+    { city: "Gujranwala",      lat: 32.1617, lon: 74.1883, max: "--", min: 13.5, rain: 0 },
     { city: "D.G. Khan",       lat: 30.0489, lon: 70.6455, max: "--", min: 15, rain: 0 },
-    { city: "Murree",          lat: 33.9070, lon: 73.3943, max: "--", min: 4,  rain: 0 },
-    { city: "Sahiwal",         lat: 30.6682, lon: 73.1114, max: "--", min: 14, rain: 0 },
+    { city: "Murree",          lat: 33.9070, lon: 73.3943, max: "--", min: 4,  rain: 25 },
+    { city: "Sahiwal",         lat: 30.6682, lon: 73.1114, max: "--", min: 14.5, rain: 0 },
     { city: "Bhakkar",         lat: 31.6289, lon: 71.0634, max: "--", min: 14, rain: 0 },
     { city: "Mianwali",        lat: 32.5839, lon: 71.5370, max: "--", min: 13, rain: 0 },
     { city: "Attock",          lat: 33.7660, lon: 72.3609, max: "--", min: 11, rain: 0 },
-    { city: "Chakwal",         lat: 32.9328, lon: 72.8530, max: "--", min: 11, rain: 0 },
+    { city: "Chakwal",         lat: 32.9328, lon: 72.8530, max: "--", min: 11.5, rain: 0 },
     { city: "Mandi Bahauddin", lat: 32.5861, lon: 73.4915, max: "--", min: 13, rain: 0 },
     { city: "Hafizabad",       lat: 32.0709, lon: 73.6880, max: "--", min: 14, rain: 0 },
     { city: "Narowal",         lat: 32.1020, lon: 74.8730, max: "--", min: 13, rain: 0 },
     { city: "Kasur",           lat: 31.1154, lon: 74.4436, max: "--", min: 14, rain: 0 },
     { city: "Sheikhupura",     lat: 31.7167, lon: 73.9850, max: "--", min: 14, rain: 0 },
     { city: "Jhang",           lat: 31.2781, lon: 72.3317, max: "--", min: 15, rain: 0 },
-    { city: "T.T. Singh",      lat: 30.9713, lon: 72.4827, max: "--", min: 14, rain: 0 },
+    { city: "T.T. Singh",      lat: 30.9713, lon: 72.4827, max: "--", min: 14.5, rain: 0 },
     { city: "Okara",           lat: 30.8138, lon: 73.4534, max: "--", min: 15, rain: 0 },
-    { city: "Rahim Yar Khan",  lat: 28.4212, lon: 70.2989, max: "--", min: 16, rain: 0 },
+    { city: "Rahim Yar Khan",  lat: 28.4212, lon: 70.2989, max: "--", min: 16.5, rain: 0 },
     { city: "Vehari",          lat: 30.0419, lon: 72.3528, max: "--", min: 15, rain: 0 },
     { city: "Khanewal",        lat: 30.3017, lon: 71.9321, max: "--", min: 16, rain: 0 },
     { city: "Lodhran",         lat: 29.5339, lon: 71.6324, max: "--", min: 16, rain: 0 },
     { city: "Layyah",          lat: 30.9693, lon: 70.9428, max: "--", min: 15, rain: 0 },
     { city: "Muzaffargarh",    lat: 30.0703, lon: 71.1933, max: "--", min: 16, rain: 0 },
     { city: "Rajanpur",        lat: 29.1035, lon: 70.3250, max: "--", min: 16, rain: 0 },
-    { city: "Bahawalnagar",    lat: 29.9987, lon: 73.2536, max: "--", min: 15, rain: 0 },
+    { city: "Bahawalnagar",    lat: 29.9987, lon: 73.2536, max: "--", min: 15.5, rain: 0 },
     { city: "Chiniot",         lat: 31.7200, lon: 72.9789, max: "--", min: 14, rain: 0 },
     { city: "Pakpattan",       lat: 30.3410, lon: 73.3866, max: "--", min: 15, rain: 0 },
     { city: "Nankana Sahib",   lat: 31.4492, lon: 73.7058, max: "--", min: 14, rain: 0 },
@@ -78,18 +78,30 @@ window.PMD_ARCHIVE = {
     { city: "Mithi",      lat: 24.7370, lon: 69.7971, max: "--", min: 18, rain: 0 },
     { city: "Badin",      lat: 24.6558, lon: 68.8330, max: "--", min: 20, rain: 0 },
 
-    // KP
-    { city: "Peshawar",   lat: 34.0150, lon: 71.5249, max: "--", min: 12, rain: 0 },
+    // KP & Northern Areas
+    { city: "Peshawar",   lat: 34.0150, lon: 71.5249, max: "--", min: 12.5, rain: 15 },
     { city: "Mardan",     lat: 34.1989, lon: 72.0468, max: "--", min: 11, rain: 0 },
-    { city: "Swat",       lat: 35.2227, lon: 72.4258, max: "--", min: 7,  rain: 0 },
+    { city: "Swat",       lat: 35.2227, lon: 72.4258, max: "--", min: 7,  rain: "Trace" },
     { city: "D.I. Khan",  lat: 31.8626, lon: 70.9019, max: "--", min: 14, rain: 0 },
     { city: "Bannu",      lat: 32.9861, lon: 70.6042, max: "--", min: 13, rain: 0 },
     { city: "Kohat",      lat: 33.5869, lon: 71.4414, max: "--", min: 12, rain: 0 },
+    { city: "Dir",        lat: 35.19,   lon: 71.87,   max: "--", min: 6.0, rain: 19 },
+    { city: "Mirkhani",   lat: 35.58,   lon: 71.72,   max: "--", min: 5.5, rain: 7 },
+    { city: "Balakot",    lat: 34.55,   lon: 73.35,   max: "--", min: 9.0, rain: 6 },
+    { city: "Chitral",    lat: 35.85,   lon: 71.78,   max: "--", min: 5.5, rain: 5 },
+    { city: "Drosh",      lat: 35.56,   lon: 71.79,   max: "--", min: 7.5, rain: 5 },
+    { city: "Pattan",     lat: 35.12,   lon: 73.01,   max: "--", min: 6.0, rain: 1 },
+    { city: "Kalam",      lat: 35.48,   lon: 72.58,   max: "--", min: 0.0, rain: "Trace" },
 
     // Gilgit-Baltistan & AJK
     { city: "Gilgit",       lat: 35.9208, lon: 74.3083, max: "--", min: 6,  rain: 0 },
     { city: "Skardu",       lat: 35.2971, lon: 75.6333, max: "--", min: 2,  rain: 0 },
-    { city: "Muzaffarabad", lat: 34.3700, lon: 73.4714, max: "--", min: 9,  rain: 0 }
+    { city: "Muzaffarabad", lat: 34.3700, lon: 73.4714, max: "--", min: 9,  rain: 0 },
+    { city: "Chilas",       lat: 35.42,   lon: 74.09,   max: "--", min: 9.5, rain: 4 },
+    { city: "Astore",       lat: 35.36,   lon: 74.85,   max: "--", min: 3.0, rain: 2 },
+    { city: "Gupis",        lat: 36.22,   lon: 73.44,   max: "--", min: 3.0, rain: "Trace" },
+    { city: "Bunji",        lat: 35.64,   lon: 74.63,   max: "--", min: 5.5, rain: "Trace" },
+    { city: "Garhi Dupatta",lat: 34.22,   lon: 73.61,   max: "--", min: 7.0, rain: "Trace" }
   ],
 
   // --- PAST DAYS (SAVED FOREVER) ---
@@ -132,7 +144,6 @@ window.PMD_ARCHIVE = {
     { city: "Karachi",    lat: 24.8608, lon: 67.0104, max: 34, min: 23, rain: 0 }
   ]
 };
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -288,16 +299,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       if(grid.innerHTML === '') grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Weather data temporarily unavailable.</div>';
-    } catch { grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Unable to load weather data.</div>'; }
+    } catch { grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Unable to load weather data. Check your internet connection.</div>'; }
   }
   loadWeather();
 
-  /* ---- RIVER GAUGE API ---- */
+  /* ==========================================================
+     📍 BULLETPROOF RIVER GAUGE API
+     ========================================================== */
   async function loadRiverData() {
     const grid = document.getElementById('river-grid');
-    if(!grid) return;
-    const today = new Date();
-    const start = today.toISOString().split('T')[0];
+    if(!grid) return; 
+    
     const RIVERS = [
       { name: 'Indus (Tarbela)', lat: 34.08, lon: 72.82 }, { name: 'Jhelum (Mangla)', lat: 33.14, lon: 73.64 },
       { name: 'Chenab (Marala)', lat: 32.67, lon: 74.46 }, { name: 'Kabul (Nowshera)',lat: 34.01, lon: 71.98 },
@@ -307,14 +319,20 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const results = await Promise.all(RIVERS.map(river => {
         return fetch(`https://flood-api.open-meteo.com/v1/flood?latitude=${river.lat}&longitude=${river.lon}&daily=river_discharge&forecast_days=1`)
-              .then(r => r.json()).then(data => ({
-                  source: 'Open-Meteo GloFAS', discharge: data.daily?.river_discharge?.[0] || 0
-              })).catch(() => null);
+              .then(r => {
+                  if (!r.ok) throw new Error("API Error");
+                  return r.json();
+              })
+              .catch(() => null);
       }));
+      
       grid.innerHTML = '';
+      let dataFound = false;
+
       results.forEach((data, i) => { 
-        if(data && data.discharge !== undefined) { 
-          const discharge = parseFloat(data.discharge);
+        if(data && data.daily && data.daily.river_discharge && data.daily.river_discharge.length > 0) { 
+          dataFound = true;
+          const discharge = parseFloat(data.daily.river_discharge[0]);
           const card = document.createElement('div'); card.className = 'glass-card w-card reveal in';
           let status = 'Normal Flow'; let badgeColor = 'var(--above)';
           if (discharge > 3000 && discharge <= 8000) { status = 'High Flow'; badgeColor = 'var(--warn)'; }
@@ -327,19 +345,34 @@ document.addEventListener('DOMContentLoaded', () => {
           grid.appendChild(card); 
         } 
       });
-    } catch { grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Unable to load hydrological models.</div>'; }
+      
+      if (!dataFound) {
+          grid.innerHTML = '<div class="w-loading" style="color:var(--warn)">River data temporarily unavailable.</div>';
+      }
+    } catch { 
+      grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Unable to connect to hydrological models.</div>'; 
+    }
   }
   loadRiverData();
 
-  /* ---- EARTHQUAKES API ---- */
+  /* ==========================================================
+     📍 BULLETPROOF EARTHQUAKES API
+     ========================================================== */
   async function loadEarthquakes() {
     const grid = document.getElementById('quake-grid');
-    if(!grid) return;
+    if(!grid) return; 
+    
     try {
       const res = await fetch('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minmagnitude=3.5&limit=4&minlatitude=23&maxlatitude=37&minlongitude=60&maxlongitude=78');
+      if (!res.ok) throw new Error("API Blocked");
       const data = await res.json();
+      
       grid.innerHTML = '';
-      if(data.features.length === 0) { grid.innerHTML = '<div class="w-loading">No recent significant earthquakes in the region.</div>'; return; }
+      if(!data.features || data.features.length === 0) { 
+          grid.innerHTML = '<div class="w-loading">No recent significant earthquakes in the region.</div>'; 
+          return; 
+      }
+      
       data.features.forEach(eq => {
           const props = eq.properties; const mag = props.mag.toFixed(1); const place = props.place;
           const time = new Date(props.time).toLocaleString('en-PK', {timeZone: 'Asia/Karachi', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
@@ -351,7 +384,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="wc-stats" style="border-top: 1px solid var(--border); padding-top: 0.8rem; justify-content:center;"><div class="wc-stat"><span class="wc-stat-icon">🕒</span> <span class="wc-row-val">${time} PKT</span></div></div>`;
           grid.appendChild(card);
       });
-    } catch { grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Unable to load seismic data.</div>'; }
+    } catch { 
+      grid.innerHTML = '<div class="w-loading" style="color:var(--below)">Unable to load seismic data from USGS.</div>'; 
+    }
   }
   loadEarthquakes();
 
@@ -473,8 +508,8 @@ document.addEventListener('DOMContentLoaded', () => {
           // Initialize Map - ATTRIBUTION CONTROL FALSE (REMOVES LOGO/TEXT)
           const map = L.map(targetElement.id, { scrollWheelZoom: false, attributionControl: false }).setView([30.0, 69.0], 5);
           
-          const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
-          const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { maxZoom: 10 });
+          const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', { maxZoom: 10 });
+          const lightTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', { maxZoom: 10 });
           
           const baseMaps = { "Dark Map": darkTiles, "Light Map": lightTiles };
           L.control.layers(baseMaps).addTo(map);
