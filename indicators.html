@@ -105,7 +105,129 @@
     <div class="footer-links">
       <a href="index.html#hero">Home</a>
       <a href="index.html#live">Weather</a>
+      <a href="rive<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Live Climate Indicators | PakClimate Insight</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+<canvas id="rain-canvas"></canvas>
+<canvas id="particle-canvas"></canvas>
+
+<button id="scrollTopBtn" title="Go to top">↑</button>
+
+<div class="weather-ticker">
+  <div class="ticker-label">LIVE ALERTS</div>
+  <div class="ticker-wrap">
+    <div class="ticker-move">
+      <span class="ticker-item">⚠️ <strong>Western Disturbance Alert:</strong> A moderate to strong system approaches by March 27. Widespread precipitation is expected across Khyber Pakhtunkhwa, North Balochistan, and Punjab.</span>
+      <span class="ticker-item">🚨 <strong>ENSO Watch:</strong> ECMWF plumes indicate a rapid warming trajectory. A strong El Niño is expected by peak summer 2026, which poses a severe drought risk to Sindh.</span>
+      <span class="ticker-item">🌙 <strong>Astronomy Update:</strong> The Shawwal 1447 AH moon sighting is confirmed impossible for March 19. Eid ul Fitr is projected for Saturday, March 21, 2026.</span>
+      <span class="ticker-item">🌍 <strong>System Update:</strong> Live AQI and regional seismic monitoring systems are now online.</span>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html#hero" class="nav-logo">
+      <span class="logo-icon">⛈</span>
+      <span class="logo-name">PakClimate<span class="logo-accent">Insight</span></span>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#live">Weather</a></li>
+      <li><a href="rivers.html">Rivers</a></li>
+      <li><a href="earthquakes.html">Quakes</a></li>
+      <li><a href="index.html#rainfall-update">Alerts</a></li>
+      <li><a href="index.html#outlook">Outlook 2026</a></li>
+      <li><a href="history.html">History</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn active">Resources ▾</a>
+        <div class="dropdown-content">
+          <a href="tools.html">Calculators ⚡</a>
+          <a href="indicators.html" class="active">Live Indicators 🌍</a>
+          <a href="resources.html">Data Sources</a>
+        </div>
+      </li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="t-sun">☀️</span>
+        <span class="t-moon">🌙</span>
+      </button>
+      <button id="hamburger" class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="section" style="padding-top: 140px; min-height: 80vh;">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Real Time Data</span>
+      <h2 class="sec-title">Global Climate <span class="accent">Indicators</span></h2>
+      <p class="sec-sub">Live monitoring of major oceanic and atmospheric indices that impact South Asian weather.</p>
+    </div>
+
+    <div class="indicator-panel">
+      <div class="ind-card warn reveal">
+        <span class="ind-title">ENSO Index (Niño 3.4)</span>
+        <div class="ind-value" style="color: var(--below);">> +1.5 °C</div>
+        <p class="ind-desc">Strong El Niño conditions are rapidly developing. This will have an extreme suppressive influence on standard monsoon dynamics.</p>
+        <div class="ind-source">Data Ref: NOAA and ECMWF Forecast</div>
+      </div>
+
+      <div class="ind-card reveal">
+        <span class="ind-title">Indian Ocean Dipole</span>
+        <div class="ind-value" style="color: var(--neutral);">+0.15 °C</div>
+        <p class="ind-desc">The Indian Ocean Dipole is currently in a neutral phase but trending negative. Our models favor a negative phase by the summer.</p>
+        <div class="ind-source">Data Ref: Bureau of Meteorology and NOAA</div>
+      </div>
+
+      <div class="ind-card good reveal">
+        <span class="ind-title">Madden Julian Oscillation</span>
+        <div class="ind-value" style="color: var(--above);">Phase 3</div>
+        <p class="ind-desc">The MJO is currently active over the Indian Ocean. This is favorable for episodic, localized rainfall pulses across Pakistan.</p>
+        <div class="ind-source">Data Ref: NOAA CPC MJO Update</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-icon">⛈</span>
+      <span class="logo-name">PakClimate<span class="logo-accent">Insight</span></span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#live">Weather</a>
       <a href="rivers.html">Rivers</a>
+      <a href="earthquakes.html">Quakes</a>
+      <a href="index.html#rainfall-update">Alerts</a>
+      <a href="index.html#outlook">Outlook</a>
+      <a href="history.html">History</a>
+      <a href="tools.html">Calculators</a>
+      <a href="resources.html">Resources</a>
+      <a href="index.html#about">About</a>
+    </div>
+    <p class="footer-copy">© 2026 Mudasir Jameel Weather Analysis | Pakistan Climate and Meteorological Dashboard</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>rs.html">Rivers</a>
       <a href="earthquakes.html">Quakes</a>
       <a href="index.html#rainfall-update">Alerts</a>
       <a href="index.html#outlook">Outlook</a>
